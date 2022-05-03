@@ -1,0 +1,675 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BD9C3ED3-45F7-43C0-B1C9-CB1870BCBCC5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EquipmentDB</RootNamespace>
+    <AssemblyName>EquipmentDB</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>опубликовать\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>0.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>false</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>6</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>21D74DDB44E2161CABD704BDDDB05E74C8ABB81A</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>EquipmentDB_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>iconfinder_pc_38745.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqToExcel, Version=1.11.0.0, Culture=neutral, PublicKeyToken=9c8ea65a58f03f1f, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel.1.11.0\lib\LinqToExcel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Microsoft.Office.Interop.Word.15.0.4797.1003\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel.1.11.0\lib\Remotion.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Interfaces, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel.1.11.0\lib\Remotion.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\BalanceType.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Corps.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Employee.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EmployeeEquipment.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EmployeeFileLoader.cs" />
+    <Compile Include="Controller\IRepository.cs" />
+    <Compile Include="Model\EmployeeRoom.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Equipment.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EquipmentLeasing.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\EquipmentType.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Manufacturer.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Organization.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PartialClass\Employee.cs" />
+    <Compile Include="Model\PartialClass\Organization.cs" />
+    <Compile Include="Model\PartialClass\Post.cs" />
+    <Compile Include="Model\PartialClass\Corps.cs" />
+    <Compile Include="Model\PartialClass\EquipmentType.cs" />
+    <Compile Include="Model\PartialClass\Room.cs" />
+    <Compile Include="Model\PartialClass\Manufacturer.cs" />
+    <Compile Include="Model\PartialClass\BalanceType.cs" />
+    <Compile Include="Model\PartialClass\Equipment.cs" />
+    <Compile Include="Model\PartialClass\RoomEquipment.cs" />
+    <Compile Include="Model\PartialClass\EmployeeEquipment.cs" />
+    <Compile Include="Model\PartialClass\EquipmentLeasing.cs" />
+    <Compile Include="Model\PartialClass\WriteOffEquipment.cs" />
+    <Compile Include="Model\PartialClass\EmployeeRoom.cs" />
+    <Compile Include="Controller\Repository.cs" />
+    <Compile Include="Model\Post.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Room.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\RoomEquipment.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\User.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Verfication\EquipemntExcel.cs" />
+    <Compile Include="Model\Verfication\EquipmentVerificator.cs" />
+    <Compile Include="Model\WriteOffEquipment.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditOrganizationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditOrganizationForm.designer.cs">
+      <DependentUpon>AddEditOrganizationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditPostForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditPostForm.designer.cs">
+      <DependentUpon>AddEditPostForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditManufacturerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditManufacturerForm.designer.cs">
+      <DependentUpon>AddEditManufacturerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditEquipmentTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditEquipmentTypeForm.designer.cs">
+      <DependentUpon>AddEditEquipmentTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditCorpsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditCorpsForm.designer.cs">
+      <DependentUpon>AddEditCorpsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditEmployeeForm.designer.cs">
+      <DependentUpon>AddEditEmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditRoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditRoomForm.designer.cs">
+      <DependentUpon>AddEditRoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditEquipmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditEquipmentForm.designer.cs">
+      <DependentUpon>AddEditEquipmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditRoomEquipmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditRoomEquipmentForm.designer.cs">
+      <DependentUpon>AddEditRoomEquipmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditEquipmentLeasingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditEquipmentLeasingForm.designer.cs">
+      <DependentUpon>AddEditEquipmentLeasingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditUserForm.designer.cs">
+      <DependentUpon>AddEditUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditEmployeeEquipmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditEmployeeEquipmentForm.designer.cs">
+      <DependentUpon>AddEditEmployeeEquipmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditEmployeeRoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditEmployeeRoomForm.designer.cs">
+      <DependentUpon>AddEditEmployeeRoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditWriteOffEquipmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddEditForms\AddEditWriteOffEquipmentForm.designer.cs">
+      <DependentUpon>AddEditWriteOffEquipmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AboutForm.designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainForms\EmployeesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainForms\EmployeesForm.designer.cs">
+      <DependentUpon>EmployeesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainForms\EquipmentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainForms\EquipmentsForm.designer.cs">
+      <DependentUpon>EquipmentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainForms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainForms\LoginForm.designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainForms\RoomEquipmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainForms\RoomEquipmentForm.designer.cs">
+      <DependentUpon>RoomEquipmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainForms\EquipmentLeasingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainForms\EquipmentLeasingForm.designer.cs">
+      <DependentUpon>EquipmentLeasingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainForms\UsersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainForms\UsersForm.designer.cs">
+      <DependentUpon>UsersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainForms\EmployeeEquipmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainForms\EmployeeEquipmentForm.designer.cs">
+      <DependentUpon>EmployeeEquipmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainForms\EmployeeRoomsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainForms\EmployeeRoomsForm.designer.cs">
+      <DependentUpon>EmployeeRoomsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainForms\WriteOffEquipmentsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainForms\WriteOffEquipmentsForm.designer.cs">
+      <DependentUpon>WriteOffEquipmentsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainForms\RoomPassportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainForms\RoomPassportForm.designer.cs">
+      <DependentUpon>RoomPassportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainForms\EmployeeEquipmentReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainForms\EmployeeEquipmentReportForm.designer.cs">
+      <DependentUpon>EmployeeEquipmentReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainForms\VerificationEquipmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainForms\VerificationEquipmentForm.designer.cs">
+      <DependentUpon>VerificationEquipmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReferenceForms\OrganizationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ReferenceForms\OrganizationsForm.designer.cs">
+      <DependentUpon>OrganizationsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReferenceForms\PostsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ReferenceForms\PostsForm.designer.cs">
+      <DependentUpon>PostsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainForms\RoomsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MainForms\RoomsForm.designer.cs">
+      <DependentUpon>RoomsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReferenceForms\CorpsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ReferenceForms\CorpsForm.designer.cs">
+      <DependentUpon>CorpsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReferenceForms\EquipmentTypesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ReferenceForms\EquipmentTypesForm.designer.cs">
+      <DependentUpon>EquipmentTypesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReferenceForms\ManufacturersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ReferenceForms\ManufacturersForm.designer.cs">
+      <DependentUpon>ManufacturersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TemplateFiller\VerificationTemplate.cs" />
+    <Compile Include="TemplateFiller\EmployeeTemplate.cs" />
+    <Compile Include="TemplateFiller\EquipmentLeasingTemplate.cs" />
+    <Compile Include="TemplateFiller\IWordTemplate.cs" />
+    <Compile Include="TemplateFiller\RoomPassportTemplate.cs" />
+    <Compile Include="TemplateFiller\WordTemplateFiller.cs" />
+    <EmbeddedResource Include="View\AddEditForms\AddEditOrganizationForm.resx">
+      <DependentUpon>AddEditOrganizationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddEditForms\AddEditPostForm.resx">
+      <DependentUpon>AddEditPostForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddEditForms\AddEditManufacturerForm.resx">
+      <DependentUpon>AddEditManufacturerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddEditForms\AddEditEquipmentTypeForm.resx">
+      <DependentUpon>AddEditEquipmentTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddEditForms\AddEditCorpsForm.resx">
+      <DependentUpon>AddEditCorpsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddEditForms\AddEditEmployeeForm.resx">
+      <DependentUpon>AddEditEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddEditForms\AddEditRoomForm.resx">
+      <DependentUpon>AddEditRoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddEditForms\AddEditEquipmentForm.resx">
+      <DependentUpon>AddEditEquipmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddEditForms\AddEditRoomEquipmentForm.resx">
+      <DependentUpon>AddEditRoomEquipmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddEditForms\AddEditEquipmentLeasingForm.resx">
+      <DependentUpon>AddEditEquipmentLeasingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddEditForms\AddEditUserForm.resx">
+      <DependentUpon>AddEditUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddEditForms\AddEditEmployeeEquipmentForm.resx">
+      <DependentUpon>AddEditEmployeeEquipmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddEditForms\AddEditEmployeeRoomForm.resx">
+      <DependentUpon>AddEditEmployeeRoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddEditForms\AddEditWriteOffEquipmentForm.resx">
+      <DependentUpon>AddEditWriteOffEquipmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainForms\EmployeesForm.resx">
+      <DependentUpon>EmployeesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainForms\EquipmentsForm.resx">
+      <DependentUpon>EquipmentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainForms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainForms\RoomEquipmentForm.resx">
+      <DependentUpon>RoomEquipmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainForms\EquipmentLeasingForm.resx">
+      <DependentUpon>EquipmentLeasingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainForms\UsersForm.resx">
+      <DependentUpon>UsersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainForms\EmployeeEquipmentForm.resx">
+      <DependentUpon>EmployeeEquipmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainForms\EmployeeRoomsForm.resx">
+      <DependentUpon>EmployeeRoomsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainForms\WriteOffEquipmentsForm.resx">
+      <DependentUpon>WriteOffEquipmentsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainForms\RoomPassportForm.resx">
+      <DependentUpon>RoomPassportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainForms\EmployeeEquipmentReportForm.resx">
+      <DependentUpon>EmployeeEquipmentReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainForms\VerificationEquipmentForm.resx">
+      <DependentUpon>VerificationEquipmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ReferenceForms\OrganizationsForm.resx">
+      <DependentUpon>OrganizationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ReferenceForms\PostsForm.resx">
+      <DependentUpon>PostsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MainForms\RoomsForm.resx">
+      <DependentUpon>RoomsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ReferenceForms\CorpsForm.resx">
+      <DependentUpon>CorpsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ReferenceForms\EquipmentTypesForm.resx">
+      <DependentUpon>EquipmentTypesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ReferenceForms\ManufacturersForm.resx">
+      <DependentUpon>ManufacturersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="ClassDiagram1.cd" />
+    <EntityDeploy Include="Model\Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Help\Operator Manual.pdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Model\Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\EquipmentDB.Data.Corps.datasource" />
+    <None Include="Properties\DataSources\EquipmentDB.Data.Employee.datasource" />
+    <None Include="Properties\DataSources\EquipmentDB.Data.EmployeeEquipment.datasource" />
+    <None Include="Properties\DataSources\EquipmentDB.Data.EmployeeRoom.datasource" />
+    <None Include="Properties\DataSources\EquipmentDB.Data.Equipment.datasource" />
+    <None Include="Properties\DataSources\EquipmentDB.Data.EquipmentLeasing.datasource" />
+    <None Include="Properties\DataSources\EquipmentDB.Data.EquipmentType.datasource" />
+    <None Include="Properties\DataSources\EquipmentDB.Data.Manufacturer.datasource" />
+    <None Include="Properties\DataSources\EquipmentDB.Data.Organization.datasource" />
+    <None Include="Properties\DataSources\EquipmentDB.Data.Post.datasource" />
+    <None Include="Properties\DataSources\EquipmentDB.Data.Room.datasource" />
+    <None Include="Properties\DataSources\EquipmentDB.Data.RoomEquipment.datasource" />
+    <None Include="Properties\DataSources\EquipmentDB.Data.User.datasource" />
+    <None Include="Properties\DataSources\EquipmentDB.Data.Verfication.EquipemntExcel.datasource" />
+    <None Include="Properties\DataSources\EquipmentDB.Data.WriteOffEquipment.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Templates\EmployeeEquipmentTemplate">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\EmployeeTemplate">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\RoomPassportTemplate">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\VerificationTemplate">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_excel.png" />
+    <None Include="Resources\iconfinder_62_Client_User_costs_employee_finance_money_person_4308184.png" />
+    <None Include="Resources\search_24.png" />
+    <None Include="Resources\refresh_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit_16.png" />
+    <None Include="Resources\delete_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\equip_16.png" />
+    <None Include="Resources\search_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\password_1564520.png" />
+    <None Include="Resources\Username_372902.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print_905645.png" />
+    <None Include="Resources\iconfinder_restore_2460287.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_user-employee-id-badge-card_3209204 %281%29.png" />
+    <None Include="Resources\iconfinder_popular_12_5365983.png" />
+    <None Include="Resources\iconfinder_Home_Alt_4737439.png" />
+    <None Include="Resources\iconfinder_lock_298817.png" />
+    <None Include="Resources\iconfinder_ui_21_5344418.png" />
+    <None Include="Resources\iconfinder_house-shape-PhotoshopSupply.com-4_3966450.png" />
+    <None Include="Resources\iconfinder_653_Company_employee_group_people_team_4017596.png" />
+    <None Include="Resources\iconfinder_computer_103447.png" />
+    <None Include="Resources\iconfinder_hammer_tool_103858 %281%29.png" />
+    <None Include="Resources\iconfinder_hammer_tool_103858.png" />
+    <None Include="Resources\iconfinder_Vector-icons_86_10416381.png" />
+    <None Include="Resources\iconfinder_Vector-icons_86_1041638.png" />
+    <None Include="Resources\iconfinder_image2vector-4_2807499 %281%29.png" />
+    <None Include="Resources\iconfinder_image2vector-4_2807499.png" />
+    <None Include="Resources\iconfinder_architecture-interior-26_809094.png" />
+    <None Include="Resources\iconfinder_88_171447.png" />
+    <None Include="Resources\iconfinder_62_Client_User_costs_employee_finance_money_person_43081841.png" />
+    <None Include="Resources\iconfinder_77_graph_Chart_data_employee_manager_person_statistics_4308153.png" />
+    <None Include="Resources\iconfinder_01_171512.png" />
+    <None Include="Resources\iconfinder_BT_binder_905575.png" />
+    <None Include="Resources\iconfinder_user-employee-id-badge-card_3209204.png" />
+    <None Include="Resources\post_16.png" />
+    <None Include="Resources\artboard_16.png" />
+    <None Include="Resources\industry_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>Клиентский профиль .NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_pending-wait-time-revise-unfinish_3209435.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="iconfinder_pc_38745.ico" />
+    <Content Include="Model\Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\iconfinder_face-smile_118880.png" />
+    <None Include="Resources\iconfinder_reference_1348650.png" />
+    <None Include="Resources\about.png" />
+    <None Include="Resources\help.png" />
+    <None Include="Resources\return.png" />
+    <None Include="Resources\Word.png" />
+    <None Include="Resources\Word24.png" />
+    <None Include="Resources\Word80.png" />
+    <None Include="Resources\restore_3832193.png" />
+    <None Include="Resources\iconfinder_v-31_3162614.png" />
+    <None Include="Resources\iconfinder_28-Settings_4620073.png" />
+    <None Include="Resources\iconfinder_backup_171273.png" />
+    <None Include="Resources\iconfinder_organization_298836.png" />
+    <None Include="Resources\iconfinder_reply_4295560.png" />
+    <None Include="Resources\iconfinder_circle_enter_2914421.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
