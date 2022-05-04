@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.buttonAddEdit = new System.Windows.Forms.Button();
-            this.comboBoxCorps = new System.Windows.Forms.ComboBox();
+
             this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label3 = new System.Windows.Forms.Label();
@@ -39,11 +39,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxEquip = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonSearchEquipment = new System.Windows.Forms.Button();
             this.labelInventory = new System.Windows.Forms.Label();
-            this.labelBalanceType = new System.Windows.Forms.Label();
             this.labelAva = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -59,22 +57,15 @@
             this.buttonAddEdit.FlatAppearance.BorderSize = 2;
             this.buttonAddEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAddEdit.Location = new System.Drawing.Point(24, 391);
+            this.buttonAddEdit.Location = new System.Drawing.Point(24, 365);
             this.buttonAddEdit.Name = "buttonAddEdit";
-            this.buttonAddEdit.Size = new System.Drawing.Size(153, 34);
+            this.buttonAddEdit.Size = new System.Drawing.Size(152, 34);
             this.buttonAddEdit.TabIndex = 2;
+            this.buttonAddEdit.Text = "Добавить";
             this.buttonAddEdit.UseVisualStyleBackColor = false;
             this.buttonAddEdit.Click += new System.EventHandler(this.buttonAddEdit_Click);
             // 
-            // comboBoxCorps
-            // 
-            this.comboBoxCorps.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxCorps.FormattingEnabled = true;
-            this.comboBoxCorps.Location = new System.Drawing.Point(21, 38);
-            this.comboBoxCorps.Name = "comboBoxCorps";
-            this.comboBoxCorps.Size = new System.Drawing.Size(355, 23);
-            this.comboBoxCorps.TabIndex = 3;
-            this.comboBoxCorps.SelectedIndexChanged += new System.EventHandler(this.comboBoxCorps_SelectedIndexChanged);
+     
             // 
             // label2
             // 
@@ -83,7 +74,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 15);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Корпус";
+            this.label2.Text = "Номер гимназии";
             // 
             // errorProvider1
             // 
@@ -154,16 +145,6 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Инветарный номер";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(82, 362);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 15);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Тип учёта";
-            // 
             // buttonCancel
             // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -175,9 +156,9 @@
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.Image = global::EquipmentDB.Properties.Resources.cancel;
             this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancel.Location = new System.Drawing.Point(215, 391);
+            this.buttonCancel.Location = new System.Drawing.Point(215, 365);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(153, 34);
+            this.buttonCancel.Size = new System.Drawing.Size(152, 34);
             this.buttonCancel.TabIndex = 2;
             this.buttonCancel.Text = "Отмена";
             this.buttonCancel.UseVisualStyleBackColor = false;
@@ -208,16 +189,6 @@
             this.labelInventory.TabIndex = 6;
             this.labelInventory.Text = "-";
             // 
-            // labelBalanceType
-            // 
-            this.labelBalanceType.AutoSize = true;
-            this.labelBalanceType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelBalanceType.Location = new System.Drawing.Point(160, 363);
-            this.labelBalanceType.Name = "labelBalanceType";
-            this.labelBalanceType.Size = new System.Drawing.Size(12, 15);
-            this.labelBalanceType.TabIndex = 6;
-            this.labelBalanceType.Text = "-";
-            // 
             // labelAva
             // 
             this.labelAva.AutoSize = true;
@@ -243,17 +214,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(388, 437);
+            this.ClientSize = new System.Drawing.Size(387, 411);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.labelAva);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.labelBalanceType);
             this.Controls.Add(this.labelInventory);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBoxEquip);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.comboBoxRoom);
-            this.Controls.Add(this.comboBoxCorps);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSearchEquipment);
             this.Controls.Add(this.buttonAddEdit);
@@ -264,7 +232,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AddEditRoomEquipmentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.AddEditPostForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
@@ -276,10 +243,8 @@
 
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonAddEdit;
-        private System.Windows.Forms.ComboBox comboBoxCorps;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxEquip;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
@@ -287,7 +252,6 @@
         private System.Windows.Forms.Button buttonSearchEquipment;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label labelBalanceType;
         private System.Windows.Forms.Label labelInventory;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label labelAva;

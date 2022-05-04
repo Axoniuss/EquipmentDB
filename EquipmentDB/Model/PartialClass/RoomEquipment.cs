@@ -18,10 +18,6 @@
             get { return Equipment.Manufacturer.ToString(); }
         }
 
-        public string BalanceTypeStr
-        {
-            get { return Equipment.BalanceType.ToString(); }
-        }
 
         public string EquipInventoryNumber
         {

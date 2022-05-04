@@ -46,9 +46,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 15);
+            this.label1.Size = new System.Drawing.Size(104, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Корпус";
+            this.label1.Text = "Номер гимназии";
             // 
             // textBoxPostName
             // 
@@ -100,9 +100,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(12, 60);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 15);
+            this.label2.Size = new System.Drawing.Size(99, 15);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Адрес корпуса";
+            this.label2.Text = "Адрес гимназии";
             // 
             // textBoxAdress
             // 

@@ -132,9 +132,9 @@ namespace EquipmentDB.Forms.MainForms
 
         }
 
+        private void dataGridViewEquipments_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-
-
-
+        }
     }
 }

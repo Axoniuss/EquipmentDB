@@ -17,11 +17,6 @@
             get { return Equipment.InventoryNumber; }
         }
 
-        public BalanceType BalanceType
-        {
-            get { return Equipment.BalanceType; }
-        }
-
         public override bool Equals(object obj)
         {
             var item = obj as WriteOffEquipment;

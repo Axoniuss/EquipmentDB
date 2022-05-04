@@ -19,7 +19,6 @@ namespace EquipmentDB.Forms.MainForms
         private List<Manufacturer> _manufacturers;
         private List<EquipmentType> _equipmentTypes;
 
-        private List<BalanceType> _balanceTypes;
 
         
 
@@ -138,11 +137,9 @@ namespace EquipmentDB.Forms.MainForms
             dataGridView.DataSource = _repository.GetEntityes<Equipment>();
             dataGridView.ClearSelection();
             comboBoxManufacturers.SelectedItem = _manufacturers.First();
-            comboBoxBalanceType.SelectedItem = _balanceTypes.First();
             comboBoxEquipType.SelectedItem = _equipmentTypes.First();
 
             textBoxSerialNumber.Clear();
-            textBoxEquipmentName.Clear();
             textBoxInventoryNumber.Clear();
         }
 
@@ -154,7 +151,6 @@ namespace EquipmentDB.Forms.MainForms
         {
             _manufacturers = new List<Manufacturer>();
             _equipmentTypes = new List<EquipmentType>();
-            _balanceTypes = new List<BalanceType>();
             // ------------------------------------------------
             _manufacturers.Add(new Manufacturer() { ManufacturerName = "Все производители" });
             _manufacturers.AddRange(_repository.GetEntityes<Manufacturer>());
@@ -166,10 +162,6 @@ namespace EquipmentDB.Forms.MainForms
             comboBoxEquipType.DataSource = _equipmentTypes;
             comboBoxEquipType.SelectedItem = _equipmentTypes.First();
             // ------------------------------------------------
-            _balanceTypes.Add(new BalanceType() { BalanceTypeName = "Все типы учёта" });
-            _balanceTypes.AddRange(_repository.GetEntityes<BalanceType>());
-            comboBoxBalanceType.DataSource = _balanceTypes;
-            comboBoxBalanceType.SelectedItem = _balanceTypes.First();
         }
 
         #endregion
@@ -191,12 +183,6 @@ namespace EquipmentDB.Forms.MainForms
                         Where(eq => eq.Serial != null && eq.Serial.Contains(txBx.Text)).Select(eq => eq.Serial).ToArray());
                     txBx.AutoCompleteCustomSource = autoCompleteFName;
                     break;
-                case "textBoxEquipmentName":
-                    var autoCompleteEquipmentName = new AutoCompleteStringCollection();
-                    autoCompleteEquipmentName.AddRange(_repository.GetEntityes<Equipment>().Where(eq => eq.EquipmentName.ToLower().Contains(txBx.Text.ToLower())).
-                        Select(eq => eq.EquipmentName).ToArray());
-                    txBx.AutoCompleteCustomSource = autoCompleteEquipmentName;
-                    break;
                 case "textBoxInventoryNumber":
                     var autoCompleteLName = new AutoCompleteStringCollection();
                     autoCompleteLName.AddRange(_repository.GetEntityes<Equipment>().Where(eq => eq.InventoryNumber.Contains(txBx.Text)).
@@ -214,12 +200,11 @@ namespace EquipmentDB.Forms.MainForms
         {
             var manufacturer = comboBoxManufacturers.SelectedItem as Manufacturer;
             var eqType = comboBoxEquipType.SelectedItem as EquipmentType;
-            var balanceType = comboBoxBalanceType.SelectedItem as BalanceType;
 
 
             dataGridView.DataSource = null;
-            dataGridView.DataSource = _repository.FindEquipments(manufacturer, eqType, balanceType,
-                textBoxSerialNumber.Text, textBoxInventoryNumber.Text, textBoxEquipmentName.Text);
+            dataGridView.DataSource = _repository.FindEquipments(manufacturer, eqType,
+                textBoxSerialNumber.Text, textBoxInventoryNumber.Text);
         }
 
         /// <summary>

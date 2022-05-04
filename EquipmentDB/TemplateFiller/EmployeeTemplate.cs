@@ -52,7 +52,6 @@ namespace EquipmentDB.TemplateFiller
                 table.Cell(i , 3).Range.Text = equip.Serial;
                 table.Cell(i , 4).Range.Text = equip.DateIssue.ToShortDateString();
                 table.Cell(i , 5).Range.Text = equip.DateReturn.ToShortDateString();
-                table.Cell(i, 6).Range.Text = equip.BalanceType.ToString();
                 table.Cell(i, 7).Range.Text = equip.Quantity.ToString();
                 i++;
             }

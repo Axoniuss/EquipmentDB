@@ -102,9 +102,6 @@
     <Reference Include="System.Xml.Serialization" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\BalanceType.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\Corps.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -149,14 +146,13 @@
     <Compile Include="Model\Organization.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\PartialClass\Corps.cs" />
     <Compile Include="Model\PartialClass\Employee.cs" />
     <Compile Include="Model\PartialClass\Organization.cs" />
     <Compile Include="Model\PartialClass\Post.cs" />
-    <Compile Include="Model\PartialClass\Corps.cs" />
     <Compile Include="Model\PartialClass\EquipmentType.cs" />
     <Compile Include="Model\PartialClass\Room.cs" />
     <Compile Include="Model\PartialClass\Manufacturer.cs" />
-    <Compile Include="Model\PartialClass\BalanceType.cs" />
     <Compile Include="Model\PartialClass\Equipment.cs" />
     <Compile Include="Model\PartialClass\RoomEquipment.cs" />
     <Compile Include="Model\PartialClass\EmployeeEquipment.cs" />
@@ -173,11 +169,13 @@
     <Compile Include="Model\RoomEquipment.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\sysdiagram.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\User.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Verfication\EquipemntExcel.cs" />
-    <Compile Include="Model\Verfication\EquipmentVerificator.cs" />
     <Compile Include="Model\WriteOffEquipment.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -367,12 +365,6 @@
     <Compile Include="View\MainForms\RoomsForm.designer.cs">
       <DependentUpon>RoomsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ReferenceForms\CorpsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ReferenceForms\CorpsForm.designer.cs">
-      <DependentUpon>CorpsForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\ReferenceForms\EquipmentTypesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -437,6 +429,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -467,6 +460,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainForms\WriteOffEquipmentsForm.resx">
       <DependentUpon>WriteOffEquipmentsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainForms\RoomPassportForm.resx">
       <DependentUpon>RoomPassportForm.cs</DependentUpon>
@@ -485,9 +479,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainForms\RoomsForm.resx">
       <DependentUpon>RoomsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ReferenceForms\CorpsForm.resx">
-      <DependentUpon>CorpsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ReferenceForms\EquipmentTypesForm.resx">
       <DependentUpon>EquipmentTypesForm.cs</DependentUpon>
@@ -647,6 +638,8 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Content Include="Resources\gim17.PNG" />
+    <None Include="Resources\Снимок.PNG" />
     <None Include="Resources\iconfinder_face-smile_118880.png" />
     <None Include="Resources\iconfinder_reference_1348650.png" />
     <None Include="Resources\about.png" />

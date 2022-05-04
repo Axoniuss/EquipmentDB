@@ -90,6 +90,7 @@
             this.buttonAddEdit.Name = "buttonAddEdit";
             this.buttonAddEdit.Size = new System.Drawing.Size(161, 34);
             this.buttonAddEdit.TabIndex = 2;
+            this.buttonAddEdit.Text = "Добавить";
             this.buttonAddEdit.UseVisualStyleBackColor = false;
             this.buttonAddEdit.Click += new System.EventHandler(this.buttonAddEdit_Click);
             // 
@@ -110,7 +111,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 15);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Корпус";
+            this.label2.Text = "Номер гимназии";
             // 
             // errorProvider1
             // 
@@ -133,6 +134,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AddEditRoomForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Добавить";
             this.Load += new System.EventHandler(this.AddEditPostForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);

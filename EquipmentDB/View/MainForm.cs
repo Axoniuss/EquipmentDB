@@ -22,7 +22,6 @@ namespace EquipmentDB.Forms
         /// </summary>
         private List<Manufacturer> _manufacturers;
         private List<EquipmentType> _equipmentTypes;
-        private List<BalanceType> _balanceTypes;
 
         public MainForm()
         {
@@ -68,21 +67,8 @@ namespace EquipmentDB.Forms
             Show();
         }
 
-        private void всеПомещенияToolStripMenuItem_Click(object sender, System.EventArgs e)
-        {
-            Hide();
-            new RoomsForm().ShowDialog();
-            UpdateDatagrid();
-            Show();
-        }
 
-        private void корпусаToolStripMenuItem1_Click(object sender, System.EventArgs e)
-        {
-            Hide();
-            new CorpsForm().ShowDialog();
-            UpdateDatagrid();
-            Show();
-        }
+
 
         private void пользователиToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
@@ -146,11 +132,8 @@ namespace EquipmentDB.Forms
             dataGridView.ClearSelection();
 
             comboBoxManufacturers.SelectedItem = _manufacturers.First();
-            comboBoxBalanceType.SelectedItem = _balanceTypes.First();
             comboBoxEquipType.SelectedItem = _equipmentTypes.First();
-
             textBoxSerialNumber.Clear();
-            textBoxEquipmentName.Clear();
             textBoxInventoryNumber.Clear();
         }
 
@@ -161,7 +144,6 @@ namespace EquipmentDB.Forms
         {
             _manufacturers = new List<Manufacturer>();
             _equipmentTypes = new List<EquipmentType>();
-            _balanceTypes = new List<BalanceType>();
             // ------------------------------------------------
             _manufacturers.Add(new Manufacturer() { ManufacturerName = "Все производители" });
             _manufacturers.AddRange(_repository.GetEntityes<Manufacturer>());
@@ -173,10 +155,6 @@ namespace EquipmentDB.Forms
             comboBoxEquipType.DataSource = _equipmentTypes;
             comboBoxEquipType.SelectedItem = _equipmentTypes.First();
             // ------------------------------------------------
-            _balanceTypes.Add(new BalanceType() { BalanceTypeName = "Все типы учёта" });
-            _balanceTypes.AddRange(_repository.GetEntityes<BalanceType>());
-            comboBoxBalanceType.DataSource = _balanceTypes;
-            comboBoxBalanceType.SelectedItem = _balanceTypes.First();
         }
 
         /// <summary>
@@ -196,12 +174,6 @@ namespace EquipmentDB.Forms
                         Where(eq => eq.Serial != null && eq.Serial.Contains(txBx.Text)).Select(eq => eq.Serial).ToArray());
                     txBx.AutoCompleteCustomSource = autoCompleteFName;
                     break;
-                case "textBoxEquipmentName":
-                    var autoCompleteEquipmentName = new AutoCompleteStringCollection();
-                    autoCompleteEquipmentName.AddRange(_repository.GetEntityes<Equipment>().Where(eq => eq.EquipmentName.ToLower().Contains(txBx.Text.ToLower())).
-                        Select(eq => eq.EquipmentName).ToArray());
-                    txBx.AutoCompleteCustomSource = autoCompleteEquipmentName;
-                    break;
                 case "textBoxInventoryNumber":
                     var autoCompleteLName = new AutoCompleteStringCollection();
                     autoCompleteLName.AddRange(_repository.GetEntityes<Equipment>().Where(eq => eq.InventoryNumber.Contains(txBx.Text)).
@@ -219,11 +191,10 @@ namespace EquipmentDB.Forms
         {
             var manufacturer = comboBoxManufacturers.SelectedItem as Manufacturer;
             var eqType = comboBoxEquipType.SelectedItem as EquipmentType;
-            var balanceType = comboBoxBalanceType.SelectedItem as BalanceType;
 
             dataGridView.DataSource = null;
-            dataGridView.DataSource = _repository.FindEquipments(manufacturer, eqType, balanceType,
-                textBoxSerialNumber.Text, textBoxInventoryNumber.Text, textBoxEquipmentName.Text);
+            dataGridView.DataSource = _repository.FindEquipments(manufacturer, eqType,
+                textBoxSerialNumber.Text, textBoxInventoryNumber.Text);
         }
 
         /// <summary>
@@ -346,54 +317,12 @@ namespace EquipmentDB.Forms
 
         #endregion
 
-        private void сверкаОборудованияToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var openFile = new OpenFileDialog();
-            if (openFile.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    var data = new EquipmentVerificator().
-                        LoadFromExcelFile(openFile.FileName, 4).
-                        LoadEquipmentFromRepository(_repository, 1).
-                        Verificate();
+ 
 
-                    new VerificationEquipmentForm(data).ShowDialog();
-                }
-                catch (Exception exception)
-                {
-                    MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-        }
+      
 
-        private void пользователиToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            Hide();
-            new UsersForm().ShowDialog();
-            Show();
-        }
-
-        private void резервированиеБДToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var dlg = new FolderBrowserDialog();
-            if (dlg.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    _repository.CreateBackup(dlg.SelectedPath);
-                    MessageBox.Show(" Резервный файл БД успешно создан", "Резервирование БД", MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
-                }
-                catch (Exception exception)
-                {
-                    _repository.HandleException(exception);
-                    MessageBox.Show(
-                        "Рекомендуется сохранять резервные копии на сьёмный носитель и не использовать системный диск",
-                        "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-        }
+       
+       
 
         private void сотрудникиToolStripMenuItem1_Click(object sender, EventArgs e)
         {
@@ -412,25 +341,7 @@ namespace EquipmentDB.Forms
             Show();
         }
 
-        private void восстановитьФайлыБДToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var openFile = new OpenFileDialog {Filter = "backup files (*.bak)|*.bak"};
-            if (openFile.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    _repository.RestoreDatabase(openFile.FileName);
-                    MessageBox.Show($"Базы данных успешно восстановлена", "Внимание",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    UpdateDatagrid();
-                }
-                catch (Exception exception)
-                {
-                    _repository.HandleException(exception);
-                }
-
-            }
-        }
+     
 
        
 
@@ -447,10 +358,31 @@ namespace EquipmentDB.Forms
             }
         }
 
-        private void оПрограммеToolStripMenuItem1_Click(object sender, EventArgs e)
+
+
+        private void сервисToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void помещенияToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Hide();
-            new AboutForm().ShowDialog();
+            new RoomsForm().ShowDialog();
+            UpdateDatagrid();
+            Show();
+        }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProcessStartInfo sInfo = new ProcessStartInfo("https://school77.jimdofree.com/");
+            Process.Start(sInfo);
+        }
+
+        private void регистрацияПользователяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new UsersForm().ShowDialog();
             Show();
         }
     }

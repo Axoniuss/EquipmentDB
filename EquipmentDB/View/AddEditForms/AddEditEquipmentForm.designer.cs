@@ -28,16 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxEquipName = new System.Windows.Forms.TextBox();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonAddEdit = new System.Windows.Forms.Button();
             this.comboBoxEquipType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBoxManufacturer = new System.Windows.Forms.ComboBox();
-            this.label54 = new System.Windows.Forms.Label();
-            this.comboBoxBalanceType = new System.Windows.Forms.ComboBox();
             this.label64 = new System.Windows.Forms.Label();
             this.textBoxSerial = new System.Windows.Forms.TextBox();
             this.label74 = new System.Windows.Forms.Label();
@@ -53,27 +49,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownQuantity)).BeginInit();
             this.SuspendLayout();
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 162);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(153, 15);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Наименование по бух. уч.";
-            // 
-            // textBoxEquipName
-            // 
-            this.textBoxEquipName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.textBoxEquipName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBoxEquipName.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBoxEquipName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxEquipName.Location = new System.Drawing.Point(24, 183);
-            this.textBoxEquipName.MaxLength = 200;
-            this.textBoxEquipName.Name = "textBoxEquipName";
-            this.textBoxEquipName.Size = new System.Drawing.Size(419, 21);
-            this.textBoxEquipName.TabIndex = 3;
-            // 
             // buttonCancel
             // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -85,9 +60,9 @@
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.Image = global::EquipmentDB.Properties.Resources.cancel;
             this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancel.Location = new System.Drawing.Point(291, 573);
+            this.buttonCancel.Location = new System.Drawing.Point(289, 476);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(153, 34);
+            this.buttonCancel.Size = new System.Drawing.Size(151, 34);
             this.buttonCancel.TabIndex = 11;
             this.buttonCancel.Text = "Отмена";
             this.buttonCancel.UseVisualStyleBackColor = false;
@@ -101,10 +76,11 @@
             this.buttonAddEdit.FlatAppearance.BorderSize = 2;
             this.buttonAddEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAddEdit.Location = new System.Drawing.Point(24, 573);
+            this.buttonAddEdit.Location = new System.Drawing.Point(22, 476);
             this.buttonAddEdit.Name = "buttonAddEdit";
-            this.buttonAddEdit.Size = new System.Drawing.Size(153, 34);
+            this.buttonAddEdit.Size = new System.Drawing.Size(151, 34);
             this.buttonAddEdit.TabIndex = 10;
+            this.buttonAddEdit.Text = "Сохранить";
             this.buttonAddEdit.UseVisualStyleBackColor = false;
             this.buttonAddEdit.Click += new System.EventHandler(this.buttonAddEdit_Click);
             // 
@@ -146,28 +122,10 @@
             this.comboBoxManufacturer.Size = new System.Drawing.Size(397, 23);
             this.comboBoxManufacturer.TabIndex = 2;
             // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(23, 209);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(63, 15);
-            this.label54.TabIndex = 0;
-            this.label54.Text = "Тип учёта";
-            // 
-            // comboBoxBalanceType
-            // 
-            this.comboBoxBalanceType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxBalanceType.FormattingEnabled = true;
-            this.comboBoxBalanceType.Location = new System.Drawing.Point(23, 230);
-            this.comboBoxBalanceType.Name = "comboBoxBalanceType";
-            this.comboBoxBalanceType.Size = new System.Drawing.Size(419, 23);
-            this.comboBoxBalanceType.TabIndex = 5;
-            // 
             // label64
             // 
             this.label64.AutoSize = true;
-            this.label64.Location = new System.Drawing.Point(23, 259);
+            this.label64.Location = new System.Drawing.Point(22, 177);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(106, 15);
             this.label64.TabIndex = 0;
@@ -177,7 +135,7 @@
             // 
             this.textBoxSerial.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxSerial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxSerial.Location = new System.Drawing.Point(23, 280);
+            this.textBoxSerial.Location = new System.Drawing.Point(22, 198);
             this.textBoxSerial.MaxLength = 50;
             this.textBoxSerial.Name = "textBoxSerial";
             this.textBoxSerial.Size = new System.Drawing.Size(420, 21);
@@ -186,7 +144,7 @@
             // label74
             // 
             this.label74.AutoSize = true;
-            this.label74.Location = new System.Drawing.Point(23, 307);
+            this.label74.Location = new System.Drawing.Point(22, 225);
             this.label74.Name = "label74";
             this.label74.Size = new System.Drawing.Size(128, 15);
             this.label74.TabIndex = 0;
@@ -198,7 +156,7 @@
             this.textBoxInventoryNumber.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBoxInventoryNumber.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxInventoryNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxInventoryNumber.Location = new System.Drawing.Point(23, 328);
+            this.textBoxInventoryNumber.Location = new System.Drawing.Point(22, 246);
             this.textBoxInventoryNumber.MaxLength = 50;
             this.textBoxInventoryNumber.Name = "textBoxInventoryNumber";
             this.textBoxInventoryNumber.Size = new System.Drawing.Size(420, 21);
@@ -206,7 +164,7 @@
             // 
             // numericUpDownQuantity
             // 
-            this.numericUpDownQuantity.Location = new System.Drawing.Point(23, 376);
+            this.numericUpDownQuantity.Location = new System.Drawing.Point(24, 298);
             this.numericUpDownQuantity.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -231,7 +189,7 @@
             // label84
             // 
             this.label84.AutoSize = true;
-            this.label84.Location = new System.Drawing.Point(23, 355);
+            this.label84.Location = new System.Drawing.Point(24, 277);
             this.label84.Name = "label84";
             this.label84.Size = new System.Drawing.Size(76, 15);
             this.label84.TabIndex = 0;
@@ -240,17 +198,17 @@
             // label94
             // 
             this.label94.AutoSize = true;
-            this.label94.Location = new System.Drawing.Point(23, 403);
+            this.label94.Location = new System.Drawing.Point(177, 335);
             this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(80, 15);
+            this.label94.Size = new System.Drawing.Size(89, 15);
             this.label94.TabIndex = 0;
-            this.label94.Text = "Примечание";
+            this.label94.Text = "Комментарий";
             // 
             // textBoxNotice
             // 
             this.textBoxNotice.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxNotice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxNotice.Location = new System.Drawing.Point(23, 424);
+            this.textBoxNotice.Location = new System.Drawing.Point(22, 353);
             this.textBoxNotice.MaxLength = 100;
             this.textBoxNotice.Multiline = true;
             this.textBoxNotice.Name = "textBoxNotice";
@@ -303,14 +261,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(458, 619);
+            this.ClientSize = new System.Drawing.Size(456, 522);
             this.Controls.Add(this.buttonAddEquipType);
             this.Controls.Add(this.buttonAddManufacturer);
             this.Controls.Add(this.numericUpDownQuantity);
-            this.Controls.Add(this.comboBoxBalanceType);
             this.Controls.Add(this.comboBoxManufacturer);
             this.Controls.Add(this.comboBoxEquipType);
-            this.Controls.Add(this.label54);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonAddEdit);
             this.Controls.Add(this.label2);
@@ -321,11 +277,9 @@
             this.Controls.Add(this.label84);
             this.Controls.Add(this.label74);
             this.Controls.Add(this.textBoxModel);
-            this.Controls.Add(this.textBoxEquipName);
             this.Controls.Add(this.label64);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.label3);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AddEditEquipmentForm";
@@ -338,17 +292,12 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxEquipName;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonAddEdit;
         private System.Windows.Forms.ComboBox comboBoxEquipType;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxManufacturer;
-        private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.ComboBox comboBoxBalanceType;
         private System.Windows.Forms.Label label64;
         private System.Windows.Forms.TextBox textBoxSerial;
         private System.Windows.Forms.Label label74;

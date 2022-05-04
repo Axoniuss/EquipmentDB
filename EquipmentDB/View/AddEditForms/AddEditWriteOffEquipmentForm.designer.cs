@@ -41,10 +41,8 @@
             this.buttonSearchEquipment = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.labelAvailability = new System.Windows.Forms.Label();
-            this.labelBalanceType = new System.Windows.Forms.Label();
             this.labelInventoryNumber = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonAddEdit = new System.Windows.Forms.Button();
@@ -83,7 +81,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 220);
+            this.label2.Location = new System.Drawing.Point(20, 161);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(96, 15);
             this.label2.TabIndex = 0;
@@ -93,7 +91,7 @@
             // 
             this.textBoxOrderNumber.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxOrderNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxOrderNumber.Location = new System.Drawing.Point(20, 238);
+            this.textBoxOrderNumber.Location = new System.Drawing.Point(20, 179);
             this.textBoxOrderNumber.MaxLength = 100;
             this.textBoxOrderNumber.Name = "textBoxOrderNumber";
             this.textBoxOrderNumber.Size = new System.Drawing.Size(389, 21);
@@ -102,7 +100,7 @@
             // 
             // dateTimePicker
             // 
-            this.dateTimePicker.Location = new System.Drawing.Point(20, 284);
+            this.dateTimePicker.Location = new System.Drawing.Point(20, 225);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(161, 21);
             this.dateTimePicker.TabIndex = 3;
@@ -110,7 +108,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(20, 266);
+            this.label3.Location = new System.Drawing.Point(20, 207);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 15);
             this.label3.TabIndex = 0;
@@ -118,7 +116,7 @@
             // 
             // numericUpDown
             // 
-            this.numericUpDown.Location = new System.Drawing.Point(248, 284);
+            this.numericUpDown.Location = new System.Drawing.Point(248, 225);
             this.numericUpDown.Minimum = new decimal(new int[] {
             1,
             0,
@@ -137,7 +135,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(248, 266);
+            this.label4.Location = new System.Drawing.Point(248, 207);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 15);
             this.label4.TabIndex = 0;
@@ -156,34 +154,23 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.labelAvailability);
-            this.groupBox1.Controls.Add(this.labelBalanceType);
             this.groupBox1.Controls.Add(this.labelInventoryNumber);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(20, 109);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(389, 100);
+            this.groupBox1.Size = new System.Drawing.Size(389, 46);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
             // labelAvailability
             // 
             this.labelAvailability.AutoSize = true;
-            this.labelAvailability.Location = new System.Drawing.Point(158, 75);
+            this.labelAvailability.Location = new System.Drawing.Point(344, 17);
             this.labelAvailability.Name = "labelAvailability";
             this.labelAvailability.Size = new System.Drawing.Size(11, 15);
             this.labelAvailability.TabIndex = 6;
             this.labelAvailability.Text = "-";
-            // 
-            // labelBalanceType
-            // 
-            this.labelBalanceType.AutoSize = true;
-            this.labelBalanceType.Location = new System.Drawing.Point(158, 45);
-            this.labelBalanceType.Name = "labelBalanceType";
-            this.labelBalanceType.Size = new System.Drawing.Size(11, 15);
-            this.labelBalanceType.TabIndex = 7;
-            this.labelBalanceType.Text = "-";
             // 
             // labelInventoryNumber
             // 
@@ -197,20 +184,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 75);
+            this.label7.Location = new System.Drawing.Point(199, 17);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(139, 15);
             this.label7.TabIndex = 9;
             this.label7.Text = "Количество на складе:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(86, 45);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 15);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Тип учёта:";
             // 
             // label5
             // 
@@ -232,7 +210,7 @@
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.Image = global::EquipmentDB.Properties.Resources.cancel;
             this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancel.Location = new System.Drawing.Point(248, 333);
+            this.buttonCancel.Location = new System.Drawing.Point(248, 265);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(161, 34);
             this.buttonCancel.TabIndex = 8;
@@ -248,10 +226,11 @@
             this.buttonAddEdit.FlatAppearance.BorderSize = 2;
             this.buttonAddEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAddEdit.Location = new System.Drawing.Point(20, 333);
+            this.buttonAddEdit.Location = new System.Drawing.Point(20, 265);
             this.buttonAddEdit.Name = "buttonAddEdit";
             this.buttonAddEdit.Size = new System.Drawing.Size(161, 34);
             this.buttonAddEdit.TabIndex = 9;
+            this.buttonAddEdit.Text = "Добавить";
             this.buttonAddEdit.UseVisualStyleBackColor = false;
             this.buttonAddEdit.Click += new System.EventHandler(this.buttonAddEdit_Click);
             // 
@@ -260,7 +239,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(421, 379);
+            this.ClientSize = new System.Drawing.Size(421, 311);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonAddEdit);
             this.Controls.Add(this.groupBox1);
@@ -303,10 +282,8 @@
         private System.Windows.Forms.Button buttonAddEdit;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label labelAvailability;
-        private System.Windows.Forms.Label labelBalanceType;
         private System.Windows.Forms.Label labelInventoryNumber;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
     }
 }

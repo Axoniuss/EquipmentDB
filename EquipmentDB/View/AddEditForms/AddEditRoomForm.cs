@@ -41,7 +41,7 @@ namespace EquipmentDB.Forms.AddEditForms
             }
             if (comboBoxCorps.SelectedItem == null)
             {
-                MessageBox.Show(@"Не выбран корпус расположения помещения", "", MessageBoxButtons.OK,
+                MessageBox.Show(@"Не выбрано расположения помещения", "", MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
                 return false;
             }

@@ -153,7 +153,7 @@ namespace EquipmentDB.Forms.MainForms
         /// </summary>
         private void InitComboBox()
         {
-            _corps.Add(new Corps() { CorpsName = "Все корпуса" });
+
             _corps.AddRange(_repository.GetEntityes<Corps>());
             comboBoxCorps.DataSource = _corps;
             comboBoxCorps.SelectedItem = _corps.First();
@@ -167,7 +167,9 @@ namespace EquipmentDB.Forms.MainForms
             if (SelectedRoom != null) DialogResult = DialogResult.OK;
         }
 
+        private void comboBoxCorps_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-
+        }
     }
 }

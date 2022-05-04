@@ -36,7 +36,6 @@ namespace EquipmentDB.Forms.AddEditForms
 
         private bool CheckInput()
         {
-            var balanceType = comboBoxBalanceType.SelectedItem as BalanceType;
             var equipType = comboBoxEquipType.SelectedItem as EquipmentType;
             var manufacturer = comboBoxManufacturer.SelectedItem as Manufacturer;
 
@@ -51,24 +50,10 @@ namespace EquipmentDB.Forms.AddEditForms
                 MessageBox.Show("Не выбрана фирма изготовитель оборудования!");
                 return false;
             }
-            if (balanceType != null &&
-                balanceType.BalanceType_ID == 1 &&
-                string.IsNullOrWhiteSpace(textBoxInventoryNumber.Text))
-            {
-                MessageBox.Show("При добавлении оборудования на балансный учёт необхидом указать инвентарный номер!",
-                    "",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
+         
 
             
-            if (equipType.EquipmentType_ID == 0 && manufacturer.Manufacturer_ID == 0 && string.IsNullOrWhiteSpace(textBoxEquipName.Text))
-            {
-                MessageBox.Show("Укажите наименование или модель оборудования, так как не указан тип оборудования и фирма производитель!",
-                    "",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
+          
            
             return true;
         }
@@ -103,7 +88,7 @@ namespace EquipmentDB.Forms.AddEditForms
         {
 
             //--------------------------------------------------
-            comboBoxBalanceType.DataSource = _repository.GetEntityes<BalanceType>();
+        
             InitComboBoxes("all");
             if (_item != null)
             {
@@ -111,9 +96,6 @@ namespace EquipmentDB.Forms.AddEditForms
                 Text = "Редактирование";
                 comboBoxManufacturer.SelectedItem = _item.Manufacturer;
                 comboBoxEquipType.SelectedItem = _item.EquipmentType;
-
-                comboBoxBalanceType.SelectedItem = _item.BalanceType;
-                textBoxEquipName.Text = _item.EquipmentName;
                 numericUpDownQuantity.Value = _item.Quantity;
                 textBoxSerial.Text = _item.Serial;
                 textBoxInventoryNumber.Text = _item.InventoryNumber;
@@ -131,7 +113,7 @@ namespace EquipmentDB.Forms.AddEditForms
 
             #region Загрузка автодополнения для textBox
 
-            AutoCompleteLoad();
+          
 
             #endregion
         }
@@ -171,8 +153,7 @@ namespace EquipmentDB.Forms.AddEditForms
             _item.Manufacturer_ID = manufacturer.Manufacturer_ID == 0 ? (int?)null : manufacturer.Manufacturer_ID;
             _item.EquipmentType_ID = equipType.EquipmentType_ID == 0 ? (int?)null : equipType.EquipmentType_ID;
 
-            _item.BalanceType_ID = (comboBoxBalanceType.SelectedItem as BalanceType).BalanceType_ID;
-            _item.EquipmentName = textBoxEquipName.Text;
+     
             _item.Quantity = (int)numericUpDownQuantity.Value;
             _item.Serial = string.IsNullOrWhiteSpace(textBoxSerial.Text) ? "б/н" : textBoxSerial.Text;
             _item.InventoryNumber = textBoxInventoryNumber.Text;
@@ -186,7 +167,6 @@ namespace EquipmentDB.Forms.AddEditForms
 
             _item.Manufacturer = null;
             _item.EquipmentType = null;
-            _item.BalanceType = null;
             _item.EmployeeEquipments = null;
             _item.RoomEquipments = null;
             _item.WriteOffEquipments = null;
@@ -204,8 +184,6 @@ namespace EquipmentDB.Forms.AddEditForms
             {
                 Manufacturer_ID = manufacturer.Manufacturer_ID == 0 ? (int?)null : manufacturer.Manufacturer_ID,
                 EquipmentType_ID = equipType.EquipmentType_ID == 0 ? (int?)null : equipType.EquipmentType_ID,
-                BalanceType_ID = (comboBoxBalanceType.SelectedItem as BalanceType).BalanceType_ID,
-                EquipmentName = textBoxEquipName.Text,
                 Quantity = (int)numericUpDownQuantity.Value,
                 Serial = string.IsNullOrWhiteSpace(textBoxSerial.Text) ? "б/н" : textBoxSerial.Text,
                 InventoryNumber = textBoxInventoryNumber.Text,
@@ -236,50 +214,10 @@ namespace EquipmentDB.Forms.AddEditForms
 
         private void numericUpDownQuantity_ValueChanged(object sender, EventArgs e)
         {
-            var balanceType = comboBoxBalanceType.SelectedItem as BalanceType;
-            if (balanceType?.BalanceType_ID == 1 && numericUpDownQuantity.Value > 1)
-            {
-                MessageBox.Show(" Добавление оборудования на балансный учёт возможно только в единичном экземпляре!",
-                    "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                numericUpDownQuantity.Value = 1;
-            }
+          
+           
         }
 
-        private async void AutoCompleteLoad()
-        {
-            var resultTask = Task.Run(() =>
-            {
-                var autoCompleteEquipName = new AutoCompleteStringCollection();
-                autoCompleteEquipName.AddRange(_repository.GetEntityes<Equipment>().
-                    Where(eq => eq.EquipmentName != null && eq.EquipmentName.ToLower().Contains(textBoxEquipName.Text.ToLower())).Select(eq => eq.EquipmentName).ToArray());
-                return autoCompleteEquipName;
-            });
-            var equipNameList = await resultTask;
-            textBoxEquipName.AutoCompleteCustomSource = equipNameList;
-
-
-            var resultTask2 = Task.Run(() =>
-            {
-                var autoCompleteInventoryName = new AutoCompleteStringCollection();
-                autoCompleteInventoryName.AddRange(_repository.GetEntityes<Equipment>().
-                    Where(eq => eq.InventoryNumber != null && eq.InventoryNumber.ToLower().Contains(textBoxInventoryNumber.Text.ToLower())).Select(eq => eq.InventoryNumber).ToArray());
-                return autoCompleteInventoryName;
-            });
-            var inventoryList = await resultTask2;
-            textBoxInventoryNumber.AutoCompleteCustomSource = inventoryList;
-
-
-            var resultTask3 = Task.Run(() =>
-            {
-                var autoCompleteInventoryName = new AutoCompleteStringCollection();
-                autoCompleteInventoryName.AddRange(_repository.GetEntityes<Equipment>().
-                    Where(eq => eq.Model != null && eq.Model.ToLower().Contains(textBoxModel.Text.ToLower())).Select(eq => eq.Model).ToArray());
-                return autoCompleteInventoryName;
-            });
-            var modelList = await resultTask3;
-            textBoxModel.AutoCompleteCustomSource = modelList;
-
-        }
-
+     
     }
 }

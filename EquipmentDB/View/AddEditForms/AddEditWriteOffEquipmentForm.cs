@@ -116,7 +116,6 @@ namespace EquipmentDB.Forms.AddEditForms
             if (_selectedEquipment != null)
             {
                 textBoxEquipName.Text = _selectedEquipment.ToString();
-                labelBalanceType.Text = _selectedEquipment.BalanceType.ToString();
                 labelInventoryNumber.Text = _selectedEquipment.InventoryNumber;
                 labelAvailability.Text = _selectedEquipment.Availability.ToString();
             }
@@ -155,7 +154,6 @@ namespace EquipmentDB.Forms.AddEditForms
 
             _selectedEquipment = equipForm.SelectedEquipment;
             textBoxEquipName.Text = _selectedEquipment.ToString();
-            labelBalanceType.Text = _selectedEquipment.BalanceType.ToString();
             labelInventoryNumber.Text = _selectedEquipment.InventoryNumber;
             labelAvailability.Text = _selectedEquipment.Availability.ToString();
         }

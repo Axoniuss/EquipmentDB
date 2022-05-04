@@ -86,12 +86,7 @@ namespace EquipmentDB.Controller
         {
             using (var context = new EquipmentDBEntities())
             {
-                if (!context.BalanceTypes.Any())
-                {
-                    context.BalanceTypes.Add(new BalanceType() { BalanceTypeName = "Балансный" });
-                    context.BalanceTypes.Add(new BalanceType() { BalanceTypeName = "Забалансный" });
                     context.SaveChanges();
-                }
                 return !context.Users.Any();
             }
         }
@@ -113,14 +108,13 @@ namespace EquipmentDB.Controller
 
         #region Методы поиска по параметрам
 
-        public List<WriteOffEquipment> FindWriteOffEquipments(Manufacturer manufacturer, EquipmentType eqType, BalanceType balanceType, string serial,
-            string inventory, string equipName, string orderNumber, DateTime? orderDate)
+        public List<WriteOffEquipment> FindWriteOffEquipments(Manufacturer manufacturer, EquipmentType eqType, string serial,
+            string inventory, string orderNumber, DateTime? orderDate)
         {
             using (var context = new EquipmentDBEntities())
             {
                 context.EquipmentTypes.Load();
                 context.Manufacturers.Load();
-                context.BalanceTypes.Load();
                 context.Equipments.Load();
                 var query = context.WriteOffEquipments.AsQueryable();
                 if (manufacturer.Manufacturer_ID > 0)
@@ -131,10 +125,6 @@ namespace EquipmentDB.Controller
                 {
                     query = query.Where(woEquip => woEquip.Equipment.EquipmentType_ID == eqType.EquipmentType_ID);
                 }
-                if (balanceType.BalanceType_ID > 0)
-                {
-                    query = query.Where(woEquip => woEquip.Equipment.BalanceType_ID == balanceType.BalanceType_ID);
-                }
                 if (!string.IsNullOrWhiteSpace(serial))
                 {
                     query = query.Where(woEquip => woEquip.Equipment.Serial.Contains(serial));
@@ -142,14 +132,6 @@ namespace EquipmentDB.Controller
                 if (!string.IsNullOrWhiteSpace(inventory))
                 {
                     query = query.Where(woEquip => woEquip.Equipment.InventoryNumber.Contains(inventory));
-                }
-                if (!string.IsNullOrWhiteSpace(equipName))
-                {
-                    query = query.Where(woEquip => woEquip.Equipment.EquipmentName.Contains(equipName));
-                }
-                if (!string.IsNullOrWhiteSpace(orderNumber))
-                {
-                    query = query.Where(woEquip => woEquip.OrderNumber.Contains(equipName));
                 }
                 if (orderDate.HasValue)
                 {
@@ -201,13 +183,12 @@ namespace EquipmentDB.Controller
         /// Метод поиска оборудования в эксплуатации по параметрам
         /// </summary>
         public List<RoomEquipment> FindRoomEquipments(Manufacturer manufacturer, EquipmentType equipmentType,
-            BalanceType balanceType, string serial, string inventory, string equipName, Corps corps, Room room)
+            string serial, string inventory, Corps corps, Room room)
         {
             using (var context = new EquipmentDBEntities())
             {
                 context.EquipmentTypes.Load();
                 context.Manufacturers.Load();
-                context.BalanceTypes.Load();
                 context.Corps.Load();
                 context.Rooms.Load();
                 context.Equipments.Include("EmployeeEquipments").Include("RoomEquipments").Load();
@@ -221,10 +202,6 @@ namespace EquipmentDB.Controller
                 {
                     query = query.Where(equipment => equipment.Equipment.EquipmentType_ID == equipmentType.EquipmentType_ID);
                 }
-                if (balanceType.BalanceType_ID > 0)
-                {
-                    query = query.Where(equipment => equipment.Equipment.BalanceType_ID == balanceType.BalanceType_ID);
-                }
                 if (!string.IsNullOrWhiteSpace(serial))
                 {
                     query = query.Where(equipment => equipment.Equipment.Serial.Contains(serial));
@@ -233,10 +210,7 @@ namespace EquipmentDB.Controller
                 {
                     query = query.Where(equipment => equipment.Equipment.InventoryNumber.Contains(inventory));
                 }
-                if (!string.IsNullOrWhiteSpace(equipName))
-                {
-                    query = query.Where(equipment => equipment.Equipment.EquipmentName.Contains(equipName));
-                }
+
                 if (corps.Corps_ID > 0)
                 {
                     query = query.Where(equipment => equipment.Room.Corps_ID == corps.Corps_ID);
@@ -253,14 +227,13 @@ namespace EquipmentDB.Controller
         /// Поиск оборудования по заданным параметрам
         /// </summary>
         public List<Equipment> FindEquipments(Manufacturer manufacturer, EquipmentType equipmentType,
-            BalanceType balanceType, string serial, string inventory, string equipName)
+             string serial, string inventory)
         {
             using (var context = new EquipmentDBEntities())
             {
                 context.Organizations.Load();
                 context.EquipmentTypes.Load();
                 context.Manufacturers.Load();
-                context.BalanceTypes.Load();
                 context.WriteOffEquipments.Load();
                 context.Posts.Load();
                 context.Employees.Load();
@@ -276,10 +249,6 @@ namespace EquipmentDB.Controller
                 {
                     query = query.Where(equipment => equipment.EquipmentType_ID == equipmentType.EquipmentType_ID);
                 }
-                if (balanceType.BalanceType_ID > 0)
-                {
-                    query = query.Where(equipment => equipment.BalanceType_ID == balanceType.BalanceType_ID);
-                }
                 if (!string.IsNullOrWhiteSpace(serial))
                 {
                     query = query.Where(equipment => equipment.Serial.Contains(serial));
@@ -287,10 +256,6 @@ namespace EquipmentDB.Controller
                 if (!string.IsNullOrWhiteSpace(inventory))
                 {
                     query = query.Where(equipment => equipment.InventoryNumber.Contains(inventory));
-                }
-                if (!string.IsNullOrWhiteSpace(equipName))
-                {
-                    query = query.Where(equipment => equipment.EquipmentName.Contains(equipName));
                 }
                 return query.ToList();
             }
@@ -447,7 +412,6 @@ namespace EquipmentDB.Controller
                 {
                     context.EquipmentTypes.Load();
                     context.Manufacturers.Load();
-                    context.BalanceTypes.Load();
                     context.Equipments.Load();
                 }
                 if (typeof(T).Name == "EmployeeRoom")
@@ -460,7 +424,6 @@ namespace EquipmentDB.Controller
                 }
                 if (typeof(T).Name == "EmployeeEquipment")
                 {
-                    context.BalanceTypes.Load();
                     context.Manufacturers.Load();
                     context.EquipmentTypes.Load();
                     context.Equipments.Include("EmployeeEquipments").Include("RoomEquipments").Include("WriteOffEquipments").Load();
@@ -489,7 +452,6 @@ namespace EquipmentDB.Controller
                     context.Organizations.Load();
                     context.EquipmentTypes.Load();
                     context.Manufacturers.Load();
-                    context.BalanceTypes.Load();
                     context.WriteOffEquipments.Load();
                     context.Posts.Load();
                     context.Employees.Load();
@@ -505,7 +467,6 @@ namespace EquipmentDB.Controller
                 {
                     context.EquipmentTypes.Load();
                     context.Manufacturers.Load();
-                    context.BalanceTypes.Load();
                     context.Corps.Load();
                     context.Rooms.Load();
                     context.WriteOffEquipments.Load();
@@ -532,7 +493,6 @@ namespace EquipmentDB.Controller
                     context.Corps.Load();
                     context.EquipmentTypes.Load();
                     context.Manufacturers.Load();
-                    context.BalanceTypes.Load();
                     context.Equipments.Load();
                     return predicate == null ?
                         context.Set<T>().Include("RoomEquipments").Include("EmployeeRooms").ToList() :

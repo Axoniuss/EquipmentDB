@@ -57,7 +57,6 @@
             this.dataGridViewImageColumn14 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn15 = new System.Windows.Forms.DataGridViewImageColumn();
             this.numDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.equipmentNameExcelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inventoryNumberExcelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.equipmentLocationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.equipemntExcelBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -117,7 +116,6 @@
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.numDataGridViewTextBoxColumn,
-            this.equipmentNameExcelDataGridViewTextBoxColumn,
             this.inventoryNumberExcelDataGridViewTextBoxColumn,
             this.equipmentLocationDataGridViewTextBoxColumn});
             this.dataGridView.DataSource = this.equipemntExcelBindingSource;
@@ -305,13 +303,7 @@
             this.numDataGridViewTextBoxColumn.ReadOnly = true;
             this.numDataGridViewTextBoxColumn.Width = 80;
             // 
-            // equipmentNameExcelDataGridViewTextBoxColumn
-            // 
-            this.equipmentNameExcelDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.equipmentNameExcelDataGridViewTextBoxColumn.DataPropertyName = "EquipmentNameExcel";
-            this.equipmentNameExcelDataGridViewTextBoxColumn.HeaderText = "Наименование объекта";
-            this.equipmentNameExcelDataGridViewTextBoxColumn.Name = "equipmentNameExcelDataGridViewTextBoxColumn";
-            this.equipmentNameExcelDataGridViewTextBoxColumn.ReadOnly = true;
+
             // 
             // inventoryNumberExcelDataGridViewTextBoxColumn
             // 
@@ -388,7 +380,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button buttonReset;
         private System.Windows.Forms.DataGridViewTextBoxColumn numDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn equipmentNameExcelDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn inventoryNumberExcelDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn equipmentLocationDataGridViewTextBoxColumn;
     }

@@ -59,7 +59,6 @@ namespace EquipmentDB.TemplateFiller
                 table.Rows.Add();
                 table.Cell(i, 1).Range.Text = (i - 1).ToString();
                 table.Cell(i, 2).Range.Text = er.Equipment.ToString();
-                table.Cell(i, 3).Range.Text = er.BalanceTypeStr;
                 table.Cell(i, 4).Range.Text = er.EquipInventoryNumber;
                 table.Cell(i, 5).Range.Text = er.DateOfIssue.ToShortDateString();
                 table.Cell(i, 6).Range.Text = er.Quantity.ToString();

@@ -25,7 +25,6 @@ namespace EquipmentDB.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<BalanceType> BalanceTypes { get; set; }
         public DbSet<Corps> Corps { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<EmployeeEquipment> EmployeeEquipments { get; set; }
@@ -38,6 +37,7 @@ namespace EquipmentDB.Model
         public DbSet<Post> Posts { get; set; }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<RoomEquipment> RoomEquipments { get; set; }
+        public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<WriteOffEquipment> WriteOffEquipments { get; set; }
     }

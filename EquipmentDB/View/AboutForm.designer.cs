@@ -31,11 +31,11 @@ namespace EquipmentDB.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.corpsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn6 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn7 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -44,9 +44,12 @@ namespace EquipmentDB.Forms
             this.dataGridViewImageColumn10 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn11 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn12 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.dataGridViewImageColumn13 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn14 = new System.Windows.Forms.DataGridViewImageColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.corpsBindingSource)).BeginInit();
+        
+
             this.SuspendLayout();
             // 
             // dataGridViewImageColumn1
@@ -76,10 +79,6 @@ namespace EquipmentDB.Forms
             this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
             this.dataGridViewImageColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewImageColumn4.Width = 50;
-            // 
-            // corpsBindingSource
-            // 
-            this.corpsBindingSource.DataSource = typeof(EquipmentDB.Model.Corps);
             // 
             // dataGridViewImageColumn5
             // 
@@ -139,6 +138,23 @@ namespace EquipmentDB.Forms
             this.dataGridViewImageColumn12.ReadOnly = true;
             this.dataGridViewImageColumn12.Width = 30;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(43, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(505, 140);
+            this.label1.TabIndex = 1;
+            this.label1.Text = resources.GetString("label1.Text");
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
             // dataGridViewImageColumn13
             // 
             this.dataGridViewImageColumn13.HeaderText = "";
@@ -153,21 +169,24 @@ namespace EquipmentDB.Forms
             this.dataGridViewImageColumn14.Name = "dataGridViewImageColumn14";
             this.dataGridViewImageColumn14.Width = 30;
             // 
+
+            // 
             // AboutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.BackgroundImage = global::EquipmentDB.Properties.Resources.iconfinder_face_smile_118880;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(576, 323);
+            this.ClientSize = new System.Drawing.Size(632, 297);
+            this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AboutForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "О программе";
-            ((System.ComponentModel.ISupportInitialize)(this.corpsBindingSource)).EndInit();
+
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -187,6 +206,8 @@ namespace EquipmentDB.Forms
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn12;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn13;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn14;
-        private System.Windows.Forms.BindingSource corpsBindingSource;
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

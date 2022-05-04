@@ -87,6 +87,7 @@
             this.buttonAddEdit.Name = "buttonAddEdit";
             this.buttonAddEdit.Size = new System.Drawing.Size(153, 34);
             this.buttonAddEdit.TabIndex = 2;
+            this.buttonAddEdit.Text = "Добавить";
             this.buttonAddEdit.UseVisualStyleBackColor = false;
             this.buttonAddEdit.Click += new System.EventHandler(this.buttonAddEdit_Click);
             // 

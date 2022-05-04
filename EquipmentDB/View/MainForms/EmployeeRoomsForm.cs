@@ -44,7 +44,6 @@ namespace EquipmentDB.Forms.MainForms
         /// </summary>
         private void InitComboBox()
         {
-            _corps.Add(new Corps() { CorpsName = "Все корпуса" });
             _corps.AddRange(_repository.GetEntityes<Corps>());
             comboBoxCorps.DataSource = _corps;
             comboBoxCorps.SelectedItem = _corps.First();

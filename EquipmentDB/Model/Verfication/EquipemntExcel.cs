@@ -15,7 +15,6 @@ namespace EquipmentDB.Model.Verfication
     {
         public string Num { get; set; }
 
-        public string EquipmentNameExcel { get; set; }
 
         public string InventoryNumberExcel { get; set; }
 

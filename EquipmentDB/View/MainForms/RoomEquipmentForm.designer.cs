@@ -36,13 +36,13 @@ namespace EquipmentDB.Forms.MainForms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.roomEquipmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.EditColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.DeleteColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn6 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn7 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -60,33 +60,25 @@ namespace EquipmentDB.Forms.MainForms
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxEquipmentName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.textBoxSerialNumber = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxRoom = new System.Windows.Forms.ComboBox();
             this.comboBoxCorps = new System.Windows.Forms.ComboBox();
-            this.comboBoxBalanceType = new System.Windows.Forms.ComboBox();
             this.comboBoxEquipType = new System.Windows.Forms.ComboBox();
             this.comboBoxManufacturers = new System.Windows.Forms.ComboBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.balanceTypeStrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.equipInventoryNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EditColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.DeleteColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.roomEquipmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roomEquipmentBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roomEquipmentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewImageColumn1
@@ -141,7 +133,6 @@ namespace EquipmentDB.Forms.MainForms
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
-            this.balanceTypeStrDataGridViewTextBoxColumn,
             this.equipInventoryNumberDataGridViewTextBoxColumn,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn2,
@@ -156,13 +147,27 @@ namespace EquipmentDB.Forms.MainForms
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(1025, 317);
+            this.dataGridView.Size = new System.Drawing.Size(697, 317);
             this.dataGridView.TabIndex = 2;
             this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             // 
-            // roomEquipmentBindingSource
+            // EditColumn
             // 
-            this.roomEquipmentBindingSource.DataSource = typeof(RoomEquipment);
+            this.EditColumn.HeaderText = "";
+            this.EditColumn.Image = global::EquipmentDB.Properties.Resources.edit_16;
+            this.EditColumn.Name = "EditColumn";
+            this.EditColumn.ReadOnly = true;
+            this.EditColumn.ToolTipText = "Редактировать помещение";
+            this.EditColumn.Width = 30;
+            // 
+            // DeleteColumn
+            // 
+            this.DeleteColumn.HeaderText = "";
+            this.DeleteColumn.Image = global::EquipmentDB.Properties.Resources.iconfinder_reply_4295560;
+            this.DeleteColumn.Name = "DeleteColumn";
+            this.DeleteColumn.ReadOnly = true;
+            this.DeleteColumn.ToolTipText = "Вернуть на склад";
+            this.DeleteColumn.Width = 30;
             // 
             // dataGridViewImageColumn5
             // 
@@ -259,7 +264,7 @@ namespace EquipmentDB.Forms.MainForms
             this.buttonAddStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAddStatus.Location = new System.Drawing.Point(12, 12);
             this.buttonAddStatus.Name = "buttonAddStatus";
-            this.buttonAddStatus.Size = new System.Drawing.Size(151, 49);
+            this.buttonAddStatus.Size = new System.Drawing.Size(151, 35);
             this.buttonAddStatus.TabIndex = 3;
             this.buttonAddStatus.Text = "Добавить запись";
             this.toolTip1.SetToolTip(this.buttonAddStatus, "Добавление новой записи о вводе оборудования в эксплуатацию");
@@ -272,23 +277,15 @@ namespace EquipmentDB.Forms.MainForms
             this.groupBox1.Controls.Add(this.buttonSearch);
             this.groupBox1.Controls.Add(this.buttonReset);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBoxEquipmentName);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textBoxSerialNumber);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.comboBoxRoom);
-            this.groupBox1.Controls.Add(this.comboBoxCorps);
-            this.groupBox1.Controls.Add(this.comboBoxBalanceType);
             this.groupBox1.Controls.Add(this.comboBoxEquipType);
             this.groupBox1.Controls.Add(this.comboBoxManufacturers);
-            this.groupBox1.Location = new System.Drawing.Point(169, 10);
+            this.groupBox1.Location = new System.Drawing.Point(169, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(869, 160);
+            this.groupBox1.Size = new System.Drawing.Size(540, 160);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Поиск оборудования";
@@ -314,9 +311,9 @@ namespace EquipmentDB.Forms.MainForms
             this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSearch.Image = global::EquipmentDB.Properties.Resources.search_24;
             this.buttonSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSearch.Location = new System.Drawing.Point(726, 42);
+            this.buttonSearch.Location = new System.Drawing.Point(11, 123);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(137, 49);
+            this.buttonSearch.Size = new System.Drawing.Size(137, 32);
             this.buttonSearch.TabIndex = 3;
             this.buttonSearch.Text = "Найти";
             this.toolTip1.SetToolTip(this.buttonSearch, "Поиск оборудования в эксплуатации по заднным параметрам");
@@ -330,10 +327,12 @@ namespace EquipmentDB.Forms.MainForms
             this.buttonReset.FlatAppearance.BorderSize = 2;
             this.buttonReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReset.Image = global::EquipmentDB.Properties.Resources.refresh_16;
-            this.buttonReset.Location = new System.Drawing.Point(726, 97);
+            this.buttonReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonReset.Location = new System.Drawing.Point(163, 123);
             this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(137, 35);
+            this.buttonReset.Size = new System.Drawing.Size(137, 31);
             this.buttonReset.TabIndex = 3;
+            this.buttonReset.Text = "Обновить";
             this.toolTip1.SetToolTip(this.buttonReset, "Сброс параметров и данных поиска");
             this.buttonReset.UseVisualStyleBackColor = false;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
@@ -346,27 +345,6 @@ namespace EquipmentDB.Forms.MainForms
             this.label4.Size = new System.Drawing.Size(111, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "Инвентарный номер";
-            // 
-            // textBoxEquipmentName
-            // 
-            this.textBoxEquipmentName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.textBoxEquipmentName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBoxEquipmentName.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBoxEquipmentName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxEquipmentName.Location = new System.Drawing.Point(285, 122);
-            this.textBoxEquipmentName.MaxLength = 100;
-            this.textBoxEquipmentName.Name = "textBoxEquipmentName";
-            this.textBoxEquipmentName.Size = new System.Drawing.Size(215, 20);
-            this.textBoxEquipmentName.TabIndex = 10;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(285, 105);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(157, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Наименование оборудования";
             // 
             // textBoxSerialNumber
             // 
@@ -388,33 +366,6 @@ namespace EquipmentDB.Forms.MainForms
             this.label2.Size = new System.Drawing.Size(93, 13);
             this.label2.TabIndex = 9;
             this.label2.Text = "Серийный номер";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(515, 65);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 13);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Помещение";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(515, 27);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(43, 13);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Корпус";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 105);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 13);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Тип учёта";
             // 
             // label5
             // 
@@ -438,29 +389,20 @@ namespace EquipmentDB.Forms.MainForms
             // 
             this.comboBoxRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRoom.FormattingEnabled = true;
-            this.comboBoxRoom.Location = new System.Drawing.Point(515, 81);
+            this.comboBoxRoom.Location = new System.Drawing.Point(617, 131);
             this.comboBoxRoom.Name = "comboBoxRoom";
-            this.comboBoxRoom.Size = new System.Drawing.Size(202, 21);
+            this.comboBoxRoom.Size = new System.Drawing.Size(59, 21);
             this.comboBoxRoom.TabIndex = 6;
             // 
             // comboBoxCorps
             // 
             this.comboBoxCorps.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCorps.FormattingEnabled = true;
-            this.comboBoxCorps.Location = new System.Drawing.Point(515, 42);
+            this.comboBoxCorps.Location = new System.Drawing.Point(608, 104);
             this.comboBoxCorps.Name = "comboBoxCorps";
-            this.comboBoxCorps.Size = new System.Drawing.Size(202, 21);
+            this.comboBoxCorps.Size = new System.Drawing.Size(68, 21);
             this.comboBoxCorps.TabIndex = 6;
             this.comboBoxCorps.SelectedIndexChanged += new System.EventHandler(this.comboBoxCorps_SelectedIndexChanged);
-            // 
-            // comboBoxBalanceType
-            // 
-            this.comboBoxBalanceType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxBalanceType.FormattingEnabled = true;
-            this.comboBoxBalanceType.Location = new System.Drawing.Point(13, 121);
-            this.comboBoxBalanceType.Name = "comboBoxBalanceType";
-            this.comboBoxBalanceType.Size = new System.Drawing.Size(258, 21);
-            this.comboBoxBalanceType.TabIndex = 6;
             // 
             // comboBoxEquipType
             // 
@@ -492,16 +434,6 @@ namespace EquipmentDB.Forms.MainForms
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Width = 60;
             // 
-            // balanceTypeStrDataGridViewTextBoxColumn
-            // 
-            this.balanceTypeStrDataGridViewTextBoxColumn.DataPropertyName = "BalanceTypeStr";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.balanceTypeStrDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.balanceTypeStrDataGridViewTextBoxColumn.HeaderText = "Тип учёта";
-            this.balanceTypeStrDataGridViewTextBoxColumn.Name = "balanceTypeStrDataGridViewTextBoxColumn";
-            this.balanceTypeStrDataGridViewTextBoxColumn.ReadOnly = true;
-            this.balanceTypeStrDataGridViewTextBoxColumn.Width = 90;
-            // 
             // equipInventoryNumberDataGridViewTextBoxColumn
             // 
             this.equipInventoryNumberDataGridViewTextBoxColumn.DataPropertyName = "EquipInventoryNumber";
@@ -521,10 +453,10 @@ namespace EquipmentDB.Forms.MainForms
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "DateOfIssue";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Format = "d";
-            dataGridViewCellStyle5.NullValue = null;
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.NullValue = null;
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn2.HeaderText = "Дата ввода";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
@@ -533,8 +465,8 @@ namespace EquipmentDB.Forms.MainForms
             // quantityDataGridViewTextBoxColumn
             // 
             this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.quantityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.quantityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.quantityDataGridViewTextBoxColumn.HeaderText = "Кол-во";
             this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
             this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
@@ -548,41 +480,29 @@ namespace EquipmentDB.Forms.MainForms
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
-            // EditColumn
+            // roomEquipmentBindingSource
             // 
-            this.EditColumn.HeaderText = "";
-            this.EditColumn.Image = global::EquipmentDB.Properties.Resources.edit_16;
-            this.EditColumn.Name = "EditColumn";
-            this.EditColumn.ReadOnly = true;
-            this.EditColumn.ToolTipText = "Редактировать помещение";
-            this.EditColumn.Width = 30;
-            // 
-            // DeleteColumn
-            // 
-            this.DeleteColumn.HeaderText = "";
-            this.DeleteColumn.Image = global::EquipmentDB.Properties.Resources.iconfinder_reply_4295560;
-            this.DeleteColumn.Name = "DeleteColumn";
-            this.DeleteColumn.ReadOnly = true;
-            this.DeleteColumn.ToolTipText = "Вернуть на склад";
-            this.DeleteColumn.Width = 30;
+            this.roomEquipmentBindingSource.DataSource = typeof(EquipmentDB.Model.RoomEquipment);
             // 
             // RoomEquipmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1049, 505);
+            this.ClientSize = new System.Drawing.Size(721, 505);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonAddStatus);
             this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.comboBoxRoom);
+            this.Controls.Add(this.comboBoxCorps);
             this.Name = "RoomEquipmentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Оборудование в эксплуатации";
             this.Load += new System.EventHandler(this.RoomsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roomEquipmentBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roomEquipmentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -611,24 +531,17 @@ namespace EquipmentDB.Forms.MainForms
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Button buttonReset;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxEquipmentName;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxSerialNumber;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBoxBalanceType;
         private System.Windows.Forms.ComboBox comboBoxEquipType;
         private System.Windows.Forms.ComboBox comboBoxManufacturers;
         private System.Windows.Forms.BindingSource roomEquipmentBindingSource;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBoxRoom;
         private System.Windows.Forms.ComboBox comboBoxCorps;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn balanceTypeStrDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn equipInventoryNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;

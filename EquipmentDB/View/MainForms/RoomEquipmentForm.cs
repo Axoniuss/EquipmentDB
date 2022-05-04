@@ -14,7 +14,6 @@ namespace EquipmentDB.Forms.MainForms
         
         private List<Manufacturer> _manufacturers;
         private List<EquipmentType> _equipmentTypes;
-        private List<BalanceType> _balanceTypes;
         private List<Corps> _corps;
 
         private Equipment _equipment;
@@ -86,7 +85,6 @@ namespace EquipmentDB.Forms.MainForms
         {
             _manufacturers = new List<Manufacturer>();
             _equipmentTypes = new List<EquipmentType>();
-            _balanceTypes = new List<BalanceType>();
             _corps = new List<Corps>();
             InitComboBox();
             UpdateDatagrid();
@@ -99,9 +97,7 @@ namespace EquipmentDB.Forms.MainForms
         {
             comboBoxManufacturers.SelectedItem = _manufacturers.First();
             comboBoxEquipType.SelectedItem = _equipmentTypes.First();
-            comboBoxBalanceType.SelectedItem = _balanceTypes.First();
             comboBoxCorps.SelectedItem = _corps.First();
-            textBoxEquipmentName.Clear();
             textBoxInventoryNumber.Clear();
             textBoxSerialNumber.Clear();
             UpdateDatagrid();
@@ -146,9 +142,6 @@ namespace EquipmentDB.Forms.MainForms
             comboBoxEquipType.DataSource = _equipmentTypes;
 
             // ------------------------------------------------
-            _balanceTypes.Add(new BalanceType() { BalanceTypeName = "Все типы учёта" });
-            _balanceTypes.AddRange(_repository.GetEntityes<BalanceType>());
-            comboBoxBalanceType.DataSource = _balanceTypes;
            
             // ------------------------------------------------
             _corps.Add(new Corps() { CorpsName = "Все корпуса" });
@@ -166,12 +159,12 @@ namespace EquipmentDB.Forms.MainForms
         {
             var manufacturer = comboBoxManufacturers.SelectedItem as Manufacturer;
             var eqType = comboBoxEquipType.SelectedItem as EquipmentType;
-            var balanceType = comboBoxBalanceType.SelectedItem as BalanceType;
+            
             var corps = comboBoxCorps.SelectedItem as Corps;
             var room = comboBoxRoom.SelectedItem as Room;
             dataGridView.DataSource = null;
-            dataGridView.DataSource = _repository.FindRoomEquipments(manufacturer, eqType, balanceType,
-                textBoxSerialNumber.Text, textBoxInventoryNumber.Text, textBoxEquipmentName.Text, corps, room);
+            dataGridView.DataSource = _repository.FindRoomEquipments(manufacturer, eqType,
+                textBoxSerialNumber.Text, textBoxInventoryNumber.Text, corps, room);
         }
         /// <summary>
         /// Обработка события выбора корпуса
@@ -181,7 +174,7 @@ namespace EquipmentDB.Forms.MainForms
             var corp = comboBoxCorps.SelectedItem as Corps;
             if (corp!=null&&corp.Corps_ID>0)
             {
-                var rooms=new List<Room>(){new Room(){RoomName = "Все помещения корпуса"}};
+                var rooms=new List<Room>(){new Room(){RoomName = "Все помещения гимназии"}};
                 rooms.AddRange(_repository.GetEntityes<Room>(room => room.Corps_ID==corp.Corps_ID));
                 comboBoxRoom.DataSource = rooms;
                 comboBoxRoom.SelectedItem = rooms.First();

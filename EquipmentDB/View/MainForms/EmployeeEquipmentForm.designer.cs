@@ -66,7 +66,6 @@ namespace EquipmentDB.Forms.MainForms
             this.equipmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.inventoryNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.serialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.balanceTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EditColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.DeleteColumn = new System.Windows.Forms.DataGridViewImageColumn();
@@ -129,7 +128,6 @@ namespace EquipmentDB.Forms.MainForms
             this.equipmentDataGridViewTextBoxColumn,
             this.inventoryNumberDataGridViewTextBoxColumn,
             this.serialDataGridViewTextBoxColumn,
-            this.balanceTypeDataGridViewTextBoxColumn,
             this.quantityDataGridViewTextBoxColumn,
             this.EditColumn,
             this.DeleteColumn});
@@ -385,15 +383,6 @@ namespace EquipmentDB.Forms.MainForms
             this.serialDataGridViewTextBoxColumn.ReadOnly = true;
             this.serialDataGridViewTextBoxColumn.Width = 70;
             // 
-            // balanceTypeDataGridViewTextBoxColumn
-            // 
-            this.balanceTypeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.balanceTypeDataGridViewTextBoxColumn.DataPropertyName = "BalanceType";
-            this.balanceTypeDataGridViewTextBoxColumn.HeaderText = "Тип учёта";
-            this.balanceTypeDataGridViewTextBoxColumn.MinimumWidth = 100;
-            this.balanceTypeDataGridViewTextBoxColumn.Name = "balanceTypeDataGridViewTextBoxColumn";
-            this.balanceTypeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // quantityDataGridViewTextBoxColumn
             // 
             this.quantityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
@@ -485,7 +474,6 @@ namespace EquipmentDB.Forms.MainForms
         private System.Windows.Forms.DataGridViewTextBoxColumn equipmentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn inventoryNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn serialDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn balanceTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn EditColumn;
         private System.Windows.Forms.DataGridViewImageColumn DeleteColumn;

@@ -41,7 +41,6 @@ namespace EquipmentDB.TemplateFiller
             {
                 table.Rows.Add();
                 table.Cell(i+1, 1).Range.Text = i.ToString();
-                table.Cell(i+1, 2).Range.Text = equip.EquipmentNameExcel;
                 table.Cell(i+1, 3).Range.Text = equip.InventoryNumberExcel;
                 table.Cell(i+1, 4).Range.Text = equip.EquipmentLocation;
                 i++;

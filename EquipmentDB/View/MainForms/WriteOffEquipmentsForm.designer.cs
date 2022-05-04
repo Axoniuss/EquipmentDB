@@ -55,7 +55,6 @@ namespace EquipmentDB.Forms.MainForms
             this.dateTimePickerOrderDate = new System.Windows.Forms.DateTimePicker();
             this.textBoxInventoryNumber = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxEquipmentName = new System.Windows.Forms.TextBox();
             this.textBoxOrderNumber = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -64,7 +63,6 @@ namespace EquipmentDB.Forms.MainForms
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBoxBalanceType = new System.Windows.Forms.ComboBox();
             this.comboBoxEquipType = new System.Windows.Forms.ComboBox();
             this.comboBoxManufacturers = new System.Windows.Forms.ComboBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,7 +79,6 @@ namespace EquipmentDB.Forms.MainForms
             this.dataGridViewImageColumn16 = new System.Windows.Forms.DataGridViewImageColumn();
             this.writeOffEquipmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.writeOffEquipmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BalanceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.InventoryNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -146,7 +143,6 @@ namespace EquipmentDB.Forms.MainForms
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.writeOffEquipmentIDDataGridViewTextBoxColumn,
-            this.BalanceType,
             this.InventoryNumber,
             this.orderNumberDataGridViewTextBoxColumn,
             this.orderDateDataGridViewTextBoxColumn,
@@ -229,7 +225,6 @@ namespace EquipmentDB.Forms.MainForms
             this.groupBox1.Controls.Add(this.dateTimePickerOrderDate);
             this.groupBox1.Controls.Add(this.textBoxInventoryNumber);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBoxEquipmentName);
             this.groupBox1.Controls.Add(this.textBoxOrderNumber);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label6);
@@ -238,7 +233,6 @@ namespace EquipmentDB.Forms.MainForms
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.comboBoxBalanceType);
             this.groupBox1.Controls.Add(this.comboBoxEquipType);
             this.groupBox1.Controls.Add(this.comboBoxManufacturers);
             this.groupBox1.Location = new System.Drawing.Point(205, 6);
@@ -286,18 +280,6 @@ namespace EquipmentDB.Forms.MainForms
             this.label4.Size = new System.Drawing.Size(111, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "Инвентарный номер";
-            // 
-            // textBoxEquipmentName
-            // 
-            this.textBoxEquipmentName.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.textBoxEquipmentName.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.textBoxEquipmentName.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.textBoxEquipmentName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxEquipmentName.Location = new System.Drawing.Point(502, 43);
-            this.textBoxEquipmentName.MaxLength = 100;
-            this.textBoxEquipmentName.Name = "textBoxEquipmentName";
-            this.textBoxEquipmentName.Size = new System.Drawing.Size(215, 20);
-            this.textBoxEquipmentName.TabIndex = 10;
             // 
             // textBoxOrderNumber
             // 
@@ -379,14 +361,8 @@ namespace EquipmentDB.Forms.MainForms
             this.label1.TabIndex = 7;
             this.label1.Text = "Изготовитель";
             // 
-            // comboBoxBalanceType
             // 
-            this.comboBoxBalanceType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxBalanceType.FormattingEnabled = true;
-            this.comboBoxBalanceType.Location = new System.Drawing.Point(502, 88);
-            this.comboBoxBalanceType.Name = "comboBoxBalanceType";
-            this.comboBoxBalanceType.Size = new System.Drawing.Size(215, 21);
-            this.comboBoxBalanceType.TabIndex = 6;
+
             // 
             // comboBoxEquipType
             // 
@@ -408,37 +384,18 @@ namespace EquipmentDB.Forms.MainForms
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "BalanceType";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Тип учёта";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 80;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "BalanceType";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Учёт";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 80;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "BalanceType";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Учёт";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 80;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+
             // 
             // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "BalanceType";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Учёт";
-            this.dataGridViewTextBoxColumn4.MinimumWidth = 80;
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+
             // 
             // dataGridViewImageColumn13
             // 
@@ -542,15 +499,8 @@ namespace EquipmentDB.Forms.MainForms
             this.writeOffEquipmentIDDataGridViewTextBoxColumn.ReadOnly = true;
             this.writeOffEquipmentIDDataGridViewTextBoxColumn.Width = 50;
             // 
-            // BalanceType
             // 
-            this.BalanceType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.BalanceType.DataPropertyName = "BalanceType";
-            this.BalanceType.HeaderText = "Учёт";
-            this.BalanceType.MinimumWidth = 80;
-            this.BalanceType.Name = "BalanceType";
-            this.BalanceType.ReadOnly = true;
-            this.BalanceType.Width = 80;
+
             // 
             // InventoryNumber
             // 
@@ -669,7 +619,6 @@ namespace EquipmentDB.Forms.MainForms
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn15;
         private System.Windows.Forms.TextBox textBoxInventoryNumber;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxEquipmentName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxSerialNumber;
         private System.Windows.Forms.Label label2;
@@ -677,7 +626,6 @@ namespace EquipmentDB.Forms.MainForms
         private System.Windows.Forms.Button buttonSearch;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBoxBalanceType;
         private System.Windows.Forms.ComboBox comboBoxEquipType;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn16;
         private System.Windows.Forms.BindingSource writeOffEquipmentBindingSource;
@@ -691,7 +639,6 @@ namespace EquipmentDB.Forms.MainForms
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn writeOffEquipmentIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BalanceType;
         private System.Windows.Forms.DataGridViewTextBoxColumn InventoryNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn orderDateDataGridViewTextBoxColumn;

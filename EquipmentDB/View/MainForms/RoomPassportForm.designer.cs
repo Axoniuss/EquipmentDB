@@ -33,24 +33,18 @@ namespace EquipmentDB.Forms.MainForms
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewEquipments = new System.Windows.Forms.DataGridView();
-            this.equipmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.equipmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.balanceTypeStrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.equipInventoryNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateOfIssueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomEquipmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn6 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -71,6 +65,11 @@ namespace EquipmentDB.Forms.MainForms
             this.buttonPrint = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.equipmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.equipmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.equipInventoryNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateOfIssueDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEquipments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomEquipmentBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewEmployees)).BeginInit();
@@ -130,7 +129,6 @@ namespace EquipmentDB.Forms.MainForms
             this.dataGridViewEquipments.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.equipmentIDDataGridViewTextBoxColumn,
             this.equipmentDataGridViewTextBoxColumn,
-            this.balanceTypeStrDataGridViewTextBoxColumn,
             this.equipInventoryNumberDataGridViewTextBoxColumn,
             this.dateOfIssueDataGridViewTextBoxColumn,
             this.quantityDataGridViewTextBoxColumn});
@@ -144,65 +142,7 @@ namespace EquipmentDB.Forms.MainForms
             this.dataGridViewEquipments.Size = new System.Drawing.Size(682, 273);
             this.dataGridViewEquipments.TabIndex = 2;
             this.dataGridViewEquipments.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
-            // 
-            // equipmentIDDataGridViewTextBoxColumn
-            // 
-            this.equipmentIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.equipmentIDDataGridViewTextBoxColumn.DataPropertyName = "Equipment_ID";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.equipmentIDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.equipmentIDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.equipmentIDDataGridViewTextBoxColumn.MinimumWidth = 50;
-            this.equipmentIDDataGridViewTextBoxColumn.Name = "equipmentIDDataGridViewTextBoxColumn";
-            this.equipmentIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.equipmentIDDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // equipmentDataGridViewTextBoxColumn
-            // 
-            this.equipmentDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.equipmentDataGridViewTextBoxColumn.DataPropertyName = "Equipment";
-            this.equipmentDataGridViewTextBoxColumn.HeaderText = "Наименование оборудования";
-            this.equipmentDataGridViewTextBoxColumn.Name = "equipmentDataGridViewTextBoxColumn";
-            this.equipmentDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // balanceTypeStrDataGridViewTextBoxColumn
-            // 
-            this.balanceTypeStrDataGridViewTextBoxColumn.DataPropertyName = "BalanceTypeStr";
-            this.balanceTypeStrDataGridViewTextBoxColumn.HeaderText = "Тип учёта";
-            this.balanceTypeStrDataGridViewTextBoxColumn.Name = "balanceTypeStrDataGridViewTextBoxColumn";
-            this.balanceTypeStrDataGridViewTextBoxColumn.ReadOnly = true;
-            this.balanceTypeStrDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // equipInventoryNumberDataGridViewTextBoxColumn
-            // 
-            this.equipInventoryNumberDataGridViewTextBoxColumn.DataPropertyName = "EquipInventoryNumber";
-            this.equipInventoryNumberDataGridViewTextBoxColumn.HeaderText = "Инвентарный №";
-            this.equipInventoryNumberDataGridViewTextBoxColumn.Name = "equipInventoryNumberDataGridViewTextBoxColumn";
-            this.equipInventoryNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateOfIssueDataGridViewTextBoxColumn
-            // 
-            this.dateOfIssueDataGridViewTextBoxColumn.DataPropertyName = "DateOfIssue";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Format = "d";
-            dataGridViewCellStyle4.NullValue = null;
-            this.dateOfIssueDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dateOfIssueDataGridViewTextBoxColumn.HeaderText = "Дата выдачи";
-            this.dateOfIssueDataGridViewTextBoxColumn.Name = "dateOfIssueDataGridViewTextBoxColumn";
-            this.dateOfIssueDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateOfIssueDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // quantityDataGridViewTextBoxColumn
-            // 
-            this.quantityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.quantityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.quantityDataGridViewTextBoxColumn.HeaderText = "Кол-во";
-            this.quantityDataGridViewTextBoxColumn.MinimumWidth = 50;
-            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
-            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
-            this.quantityDataGridViewTextBoxColumn.Width = 50;
+            this.dataGridViewEquipments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewEquipments_CellContentClick);
             // 
             // roomEquipmentBindingSource
             // 
@@ -406,6 +346,57 @@ namespace EquipmentDB.Forms.MainForms
             this.label2.TabIndex = 6;
             this.label2.Text = "Сотрудники ответственные за помещение";
             // 
+            // equipmentIDDataGridViewTextBoxColumn
+            // 
+            this.equipmentIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.equipmentIDDataGridViewTextBoxColumn.DataPropertyName = "Equipment_ID";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.equipmentIDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.equipmentIDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.equipmentIDDataGridViewTextBoxColumn.MinimumWidth = 50;
+            this.equipmentIDDataGridViewTextBoxColumn.Name = "equipmentIDDataGridViewTextBoxColumn";
+            this.equipmentIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.equipmentIDDataGridViewTextBoxColumn.Width = 50;
+            // 
+            // equipmentDataGridViewTextBoxColumn
+            // 
+            this.equipmentDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.equipmentDataGridViewTextBoxColumn.DataPropertyName = "Equipment";
+            this.equipmentDataGridViewTextBoxColumn.HeaderText = "Наименование оборудования";
+            this.equipmentDataGridViewTextBoxColumn.Name = "equipmentDataGridViewTextBoxColumn";
+            this.equipmentDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // equipInventoryNumberDataGridViewTextBoxColumn
+            // 
+            this.equipInventoryNumberDataGridViewTextBoxColumn.DataPropertyName = "EquipInventoryNumber";
+            this.equipInventoryNumberDataGridViewTextBoxColumn.HeaderText = "Инвентарный №";
+            this.equipInventoryNumberDataGridViewTextBoxColumn.Name = "equipInventoryNumberDataGridViewTextBoxColumn";
+            this.equipInventoryNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateOfIssueDataGridViewTextBoxColumn
+            // 
+            this.dateOfIssueDataGridViewTextBoxColumn.DataPropertyName = "DateOfIssue";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.NullValue = null;
+            this.dateOfIssueDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dateOfIssueDataGridViewTextBoxColumn.HeaderText = "Дата выдачи";
+            this.dateOfIssueDataGridViewTextBoxColumn.Name = "dateOfIssueDataGridViewTextBoxColumn";
+            this.dateOfIssueDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateOfIssueDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // quantityDataGridViewTextBoxColumn
+            // 
+            this.quantityDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.quantityDataGridViewTextBoxColumn.DataPropertyName = "Quantity";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.quantityDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.quantityDataGridViewTextBoxColumn.HeaderText = "Кол-во";
+            this.quantityDataGridViewTextBoxColumn.MinimumWidth = 50;
+            this.quantityDataGridViewTextBoxColumn.Name = "quantityDataGridViewTextBoxColumn";
+            this.quantityDataGridViewTextBoxColumn.ReadOnly = true;
+            this.quantityDataGridViewTextBoxColumn.Width = 50;
+            // 
             // RoomPassportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,17 +442,16 @@ namespace EquipmentDB.Forms.MainForms
         private System.Windows.Forms.DataGridView dataGridViewEmployees;
         private System.Windows.Forms.Button buttonPrint;
         private System.Windows.Forms.BindingSource roomEquipmentBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn equipmentIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn equipmentDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn balanceTypeStrDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn equipInventoryNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfIssueDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn employeeIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn employeeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource employeeRoomBindingSource;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn equipmentIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn equipmentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn equipInventoryNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfIssueDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn quantityDataGridViewTextBoxColumn;
     }
 }

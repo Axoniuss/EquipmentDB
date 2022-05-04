@@ -19,8 +19,8 @@ namespace EquipmentDB.Controller
         /// <summary>
         /// Поиск списанного оборудования по заданным параметрам
         /// </summary>
-        List<WriteOffEquipment> FindWriteOffEquipments(Manufacturer manufacturer, EquipmentType eqType, BalanceType balanceType, string serial,
-            string inventory, string equipName, string orderNumber, DateTime? orderDate);
+        List<WriteOffEquipment> FindWriteOffEquipments(Manufacturer manufacturer, EquipmentType eqType, string serial,
+            string inventory, string orderNumber, DateTime? orderDate);
 
         /// <summary>
         /// Поиск оборудования во временном использовании
@@ -32,27 +32,23 @@ namespace EquipmentDB.Controller
         /// </summary>
         /// <param name="manufacturer">Производитель</param>
         /// <param name="equipmentType">Тип оборудования</param>
-        /// <param name="balanceType">Тип учёта</param>
         /// <param name="serial">Серийный номер</param>
         /// <param name="inventory">Инвентарный номер</param>
         /// <param name="equipName">Название оборудования</param>
         /// <param name="corps">Корпус</param>
         /// <param name="room">Помещение</param>
-        List<RoomEquipment> FindRoomEquipments(Manufacturer manufacturer, EquipmentType equipmentType,
-            BalanceType balanceType, string serial, string inventory, string equipName, Corps corps, Room room);
+        List<RoomEquipment> FindRoomEquipments(Manufacturer manufacturer, EquipmentType equipmentType
+            , string serial, string inventory, Corps corps, Room room);
 
         /// <summary>
         /// Поиск оборудования по заданным параметрам
         /// </summary>
         /// <param name="manufacturer">Производитель</param>
         /// <param name="equipmentType">Тип оборудования</param>
-        /// <param name="status">Статус оборудования</param>
-        /// <param name="balanceType">Тип учёта</param>
         /// <param name="serial">Серийный номер</param>
         /// <param name="inventory">Инвентарный номер</param>
-        /// <param name="equipName">Название оборудования</param>
         List<Equipment> FindEquipments(Manufacturer manufacturer, EquipmentType equipmentType,
-            BalanceType balanceType, string serial, string inventory, string equipName);
+             string serial, string inventory);
 
         /// <summary>
         /// Асинхронный метод импорта данных сотрудников с файла

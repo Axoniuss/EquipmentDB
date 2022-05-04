@@ -103,31 +103,8 @@ namespace EquipmentDB.Forms.AddEditForms
             }
         }
 
-        private void AddEditPostForm_Load(object sender, EventArgs e)
-        {
-            comboBoxCorps.DataSource = _repository.GetEntityes<Corps>();
-            if (_item != null)
-            {
-                buttonAddEdit.Text = "Сохранить";
-                Text = "Редактирование";
-                comboBoxRoom.SelectedItem = _item.Room;
-                _selectedEquipment = _item.Equipment;
-                //-------------------------
-                textBoxEquip.Text = _selectedEquipment.ToString();
-                labelInventory.Text = _selectedEquipment.InventoryNumber;
-                labelBalanceType.Text = _selectedEquipment.BalanceType.ToString();
-                labelAva.Text = _selectedEquipment.Availability.ToString();
-                //-------------------------
-                numericUpDown1.Value = _item.Quantity;
-                buttonAddEdit.Image = Resources.save;
-            }
-            else
-            {
-                buttonAddEdit.Text = "Добавить";
-                Text = "Добавление";
-                buttonAddEdit.Image = Resources.add;
-            }
-        }
+     
+ 
 
 
         private void buttonSearchEquipment_Click(object sender, EventArgs e)
@@ -138,20 +115,12 @@ namespace EquipmentDB.Forms.AddEditForms
                 _selectedEquipment = equipForm.SelectedEquipment;
                 textBoxEquip.Text = _selectedEquipment.ToString();
                 labelInventory.Text = _selectedEquipment.InventoryNumber;
-                labelBalanceType.Text = _selectedEquipment.BalanceType.ToString();
                 labelAva.Text = _selectedEquipment.Availability.ToString();
                 
             }
         }
 
-        private void comboBoxCorps_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            var corp = comboBoxCorps.SelectedItem as Corps;
-            if (corp != null)
-            {
-                comboBoxRoom.DataSource = _repository.GetEntityes<Room>(room => room.Corps_ID == corp.Corps_ID);
-            }
-        }
+    
 
 
     }

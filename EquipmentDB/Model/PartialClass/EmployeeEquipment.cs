@@ -29,11 +29,6 @@ namespace EquipmentDB.Model
             get { return Equipment.InventoryNumber; }
         }
 
-        public string BalanceType
-        {
-            get { return Equipment.BalanceType.ToString(); }
-        }
-
         public string Serial
         {
             get { return Equipment.Serial; }

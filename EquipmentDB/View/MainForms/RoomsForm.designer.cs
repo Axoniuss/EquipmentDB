@@ -39,7 +39,6 @@ namespace EquipmentDB.Forms.MainForms
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.roomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn6 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn7 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -58,15 +57,15 @@ namespace EquipmentDB.Forms.MainForms
             this.dataGridViewImageColumn14 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn15 = new System.Windows.Forms.DataGridViewImageColumn();
             this.buttonAdd = new System.Windows.Forms.Button();
+            this.roomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.roomIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.corpsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PassportColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.EditColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.DeleteColumn = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewImageColumn1
@@ -122,7 +121,6 @@ namespace EquipmentDB.Forms.MainForms
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.roomIDDataGridViewTextBoxColumn,
             this.roomNameDataGridViewTextBoxColumn,
-            this.corpsDataGridViewTextBoxColumn,
             this.PassportColumn,
             this.EditColumn,
             this.DeleteColumn});
@@ -137,10 +135,6 @@ namespace EquipmentDB.Forms.MainForms
             this.dataGridView.TabIndex = 2;
             this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             this.dataGridView.DoubleClick += new System.EventHandler(this.dataGridView_DoubleClick);
-            // 
-            // roomBindingSource
-            // 
-            this.roomBindingSource.DataSource = typeof(Room);
             // 
             // dataGridViewImageColumn5
             // 
@@ -214,9 +208,9 @@ namespace EquipmentDB.Forms.MainForms
             // buttonReset
             // 
             this.buttonReset.Image = global::EquipmentDB.Properties.Resources.refresh_16;
-            this.buttonReset.Location = new System.Drawing.Point(412, 17);
+            this.buttonReset.Location = new System.Drawing.Point(417, 22);
             this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(54, 29);
+            this.buttonReset.Size = new System.Drawing.Size(54, 21);
             this.buttonReset.TabIndex = 8;
             this.toolTipResetButton.SetToolTip(this.buttonReset, "Сброс параметров фильтра");
             this.buttonReset.UseVisualStyleBackColor = true;
@@ -227,18 +221,19 @@ namespace EquipmentDB.Forms.MainForms
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(10, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
+            this.label1.Size = new System.Drawing.Size(93, 13);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Корпус";
+            this.label1.Text = "Номер гимназии";
             // 
             // comboBoxCorps
             // 
             this.comboBoxCorps.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxCorps.FormattingEnabled = true;
-            this.comboBoxCorps.Location = new System.Drawing.Point(55, 21);
+            this.comboBoxCorps.Location = new System.Drawing.Point(108, 22);
             this.comboBoxCorps.Name = "comboBoxCorps";
-            this.comboBoxCorps.Size = new System.Drawing.Size(351, 21);
+            this.comboBoxCorps.Size = new System.Drawing.Size(298, 21);
             this.comboBoxCorps.TabIndex = 6;
+            this.comboBoxCorps.SelectedIndexChanged += new System.EventHandler(this.comboBoxCorps_SelectedIndexChanged);
             this.comboBoxCorps.SelectedValueChanged += new System.EventHandler(this.comboBoxCorps_SelectedValueChanged);
             // 
             // dataGridViewImageColumn13
@@ -284,6 +279,10 @@ namespace EquipmentDB.Forms.MainForms
             this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAddStatus_Click_1);
             // 
+            // roomBindingSource
+            // 
+            this.roomBindingSource.DataSource = typeof(EquipmentDB.Model.Room);
+            // 
             // roomIDDataGridViewTextBoxColumn
             // 
             this.roomIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
@@ -303,14 +302,6 @@ namespace EquipmentDB.Forms.MainForms
             this.roomNameDataGridViewTextBoxColumn.HeaderText = "Наименование помещения";
             this.roomNameDataGridViewTextBoxColumn.Name = "roomNameDataGridViewTextBoxColumn";
             this.roomNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // corpsDataGridViewTextBoxColumn
-            // 
-            this.corpsDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.corpsDataGridViewTextBoxColumn.DataPropertyName = "Corps";
-            this.corpsDataGridViewTextBoxColumn.HeaderText = "Корпус";
-            this.corpsDataGridViewTextBoxColumn.Name = "corpsDataGridViewTextBoxColumn";
-            this.corpsDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // PassportColumn
             // 
@@ -352,9 +343,9 @@ namespace EquipmentDB.Forms.MainForms
             this.Text = "Помещения";
             this.Load += new System.EventHandler(this.RoomsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.roomBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -387,7 +378,6 @@ namespace EquipmentDB.Forms.MainForms
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn roomNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn corpsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn PassportColumn;
         private System.Windows.Forms.DataGridViewImageColumn EditColumn;
         private System.Windows.Forms.DataGridViewImageColumn DeleteColumn;
