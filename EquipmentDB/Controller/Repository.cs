@@ -306,8 +306,6 @@ namespace EquipmentDB.Controller
                             employee.Post = null;
                             employee.Organization_ID = organization.Organization_ID;
                             employee.Organization = null;
-                            employee.IsArchive = false;
-
                             context.Employees.Add(employee);
                             count++;
                         }

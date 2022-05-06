@@ -63,6 +63,16 @@ namespace EquipmentDB.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1579377449_17_43 {
+            get {
+                object obj = ResourceManager.GetObject("1579377449_17-43", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _excel {
             get {
                 object obj = ResourceManager.GetObject("_excel", resourceCulture);

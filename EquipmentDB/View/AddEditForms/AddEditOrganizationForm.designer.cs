@@ -61,11 +61,11 @@
             // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCancel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonCancel.BackColor = System.Drawing.Color.OldLace;
             this.buttonCancel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonCancel.FlatAppearance.BorderSize = 2;
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCancel.Image = global::EquipmentDB.Properties.Resources.cancel;
+            this.buttonCancel.Image = global::EquipmentDB.Properties.Resources.delete_16;
             this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCancel.Location = new System.Drawing.Point(230, 139);
             this.buttonCancel.Name = "buttonCancel";
@@ -79,10 +79,11 @@
             // 
             this.buttonAddEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAddEdit.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonAddEdit.BackColor = System.Drawing.Color.OldLace;
             this.buttonAddEdit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonAddEdit.FlatAppearance.BorderSize = 2;
             this.buttonAddEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddEdit.Image = global::EquipmentDB.Properties.Resources.add;
             this.buttonAddEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAddEdit.Location = new System.Drawing.Point(27, 139);
             this.buttonAddEdit.Name = "buttonAddEdit";

@@ -198,10 +198,6 @@ namespace EquipmentDB.Forms.AddEditForms
 
         private void buttonAddEquipType_Click(object sender, EventArgs e)
         {
-            var et = new AddEditEquipmentTypeForm();
-            et.ShowDialog();
-            InitComboBoxes("comboBoxEquipType");
-            comboBoxEquipType.SelectedItem = et.EquipmentType;
         }
 
         private void buttonAddManufacturer_Click(object sender, EventArgs e)

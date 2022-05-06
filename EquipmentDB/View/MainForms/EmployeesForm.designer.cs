@@ -31,13 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -70,7 +69,6 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.checkBoxArchive = new System.Windows.Forms.CheckBox();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,9 +79,6 @@
             this.ArchiveColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.postDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Organization = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EquipmentColumn = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.ReturnColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.SelectColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.EditColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.DeleteColumn = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -150,9 +145,6 @@
             this.ArchiveColumn,
             this.postDataGridViewTextBoxColumn,
             this.Organization,
-            this.EquipmentColumn,
-            this.ReturnColumn,
-            this.SelectColumn,
             this.EditColumn,
             this.DeleteColumn});
             this.dataGridView.DataSource = this.employeeBindingSource;
@@ -260,7 +252,7 @@
             // 
             // buttonSearch
             // 
-            this.buttonSearch.BackColor = System.Drawing.Color.Gainsboro;
+            this.buttonSearch.BackColor = System.Drawing.Color.OldLace;
             this.buttonSearch.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonSearch.FlatAppearance.BorderSize = 2;
             this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -278,7 +270,7 @@
             // 
             // buttonReset
             // 
-            this.buttonReset.BackColor = System.Drawing.Color.Gainsboro;
+            this.buttonReset.BackColor = System.Drawing.Color.OldLace;
             this.buttonReset.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonReset.FlatAppearance.BorderSize = 2;
             this.buttonReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -388,18 +380,17 @@
             this.buttonImportFromFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonImportFromFile.Image = global::EquipmentDB.Properties.Resources._excel;
             this.buttonImportFromFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonImportFromFile.Location = new System.Drawing.Point(12, 56);
+            this.buttonImportFromFile.Location = new System.Drawing.Point(255, 22);
             this.buttonImportFromFile.Name = "buttonImportFromFile";
             this.buttonImportFromFile.Size = new System.Drawing.Size(181, 33);
             this.buttonImportFromFile.TabIndex = 3;
             this.buttonImportFromFile.Text = "Импорт с файла";
             this.toolTip1.SetToolTip(this.buttonImportFromFile, "Импорт данных сотрудников с файла Excel");
             this.buttonImportFromFile.UseVisualStyleBackColor = false;
-            this.buttonImportFromFile.Click += new System.EventHandler(this.buttonImportFromFile_Click);
             // 
             // buttonAdd
             // 
-            this.buttonAdd.BackColor = System.Drawing.Color.Gainsboro;
+            this.buttonAdd.BackColor = System.Drawing.Color.OldLace;
             this.buttonAdd.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonAdd.FlatAppearance.BorderSize = 2;
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -427,9 +418,9 @@
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Organization";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.NullValue = "-";
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.NullValue = "-";
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTextBoxColumn1.HeaderText = "Организация";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 100;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
@@ -439,32 +430,21 @@
             // 
             this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Organization";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.NullValue = "-";
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.NullValue = "-";
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn2.HeaderText = "Организация";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 100;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
-            // checkBoxArchive
-            // 
-            this.checkBoxArchive.AutoSize = true;
-            this.checkBoxArchive.Location = new System.Drawing.Point(12, 109);
-            this.checkBoxArchive.Name = "checkBoxArchive";
-            this.checkBoxArchive.Size = new System.Drawing.Size(115, 17);
-            this.checkBoxArchive.TabIndex = 7;
-            this.checkBoxArchive.Text = "Архивные записи";
-            this.checkBoxArchive.UseVisualStyleBackColor = true;
-            this.checkBoxArchive.CheckedChanged += new System.EventHandler(this.checkBoxArchive_CheckedChanged);
-            // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Organization";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.NullValue = "-";
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.NullValue = "-";
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewTextBoxColumn3.HeaderText = "Организация";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 100;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
@@ -553,35 +533,6 @@
             this.Organization.ReadOnly = true;
             this.Organization.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
-            // EquipmentColumn
-            // 
-            this.EquipmentColumn.DataPropertyName = "EquipmentCount";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.EquipmentColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.EquipmentColumn.HeaderText = "Оборудование в использовании";
-            this.EquipmentColumn.Name = "EquipmentColumn";
-            this.EquipmentColumn.ReadOnly = true;
-            this.EquipmentColumn.Text = "";
-            this.EquipmentColumn.VisitedLinkColor = System.Drawing.Color.Blue;
-            // 
-            // ReturnColumn
-            // 
-            this.ReturnColumn.HeaderText = "";
-            this.ReturnColumn.Image = global::EquipmentDB.Properties.Resources._return;
-            this.ReturnColumn.Name = "ReturnColumn";
-            this.ReturnColumn.ReadOnly = true;
-            this.ReturnColumn.Visible = false;
-            this.ReturnColumn.Width = 30;
-            // 
-            // SelectColumn
-            // 
-            this.SelectColumn.HeaderText = "";
-            this.SelectColumn.Image = global::EquipmentDB.Properties.Resources.check_16;
-            this.SelectColumn.Name = "SelectColumn";
-            this.SelectColumn.ReadOnly = true;
-            this.SelectColumn.Visible = false;
-            this.SelectColumn.Width = 30;
-            // 
             // EditColumn
             // 
             this.EditColumn.HeaderText = "";
@@ -606,7 +557,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1054, 457);
-            this.Controls.Add(this.checkBoxArchive);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonImportFromFile);
             this.Controls.Add(this.buttonAdd);
@@ -620,7 +570,6 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -659,7 +608,7 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.CheckBox checkBoxArchive;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn employeeIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn empNameDataGridViewTextBoxColumn;
@@ -668,11 +617,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn ArchiveColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn postDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Organization;
-        private System.Windows.Forms.DataGridViewLinkColumn EquipmentColumn;
-        private System.Windows.Forms.DataGridViewImageColumn ReturnColumn;
-        private System.Windows.Forms.DataGridViewImageColumn SelectColumn;
         private System.Windows.Forms.DataGridViewImageColumn EditColumn;
         private System.Windows.Forms.DataGridViewImageColumn DeleteColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }

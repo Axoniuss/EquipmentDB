@@ -19,10 +19,17 @@ namespace EquipmentDB
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-          
+            if (repository.FirstStart())
+            {
                 Application.Run(new MainForm());
-           
+            }
+            new LoginForm().ShowDialog();
+            if (Repository.Instance.GetCurrentUser() != null)
+            {
+                Application.Run(new MainForm());
+            }
 
         }
     }
-}
+    }
+

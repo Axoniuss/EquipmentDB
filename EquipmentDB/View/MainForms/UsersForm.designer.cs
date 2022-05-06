@@ -257,7 +257,7 @@
             // 
             // buttonAddStatus
             // 
-            this.buttonAddStatus.BackColor = System.Drawing.Color.Gainsboro;
+            this.buttonAddStatus.BackColor = System.Drawing.Color.OldLace;
             this.buttonAddStatus.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonAddStatus.FlatAppearance.BorderSize = 2;
             this.buttonAddStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -290,7 +290,7 @@
             this.Controls.Add(this.dataGridView);
             this.Name = "UsersForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Пользователи системы";
+            this.Text = "Регистрация";
             this.Load += new System.EventHandler(this.RoomsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();

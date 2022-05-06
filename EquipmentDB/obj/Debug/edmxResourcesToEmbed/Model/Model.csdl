@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EquipmentDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EquipmentDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Corps" EntityType="EquipmentDBModel.Corps" />
+    <EntitySet Name="Employees" EntityType="EquipmentDBModel.Employee" />
+    <EntitySet Name="EmployeeEquipments" EntityType="EquipmentDBModel.EmployeeEquipment" />
+    <EntitySet Name="EmployeeRooms" EntityType="EquipmentDBModel.EmployeeRoom" />
+    <EntitySet Name="Equipments" EntityType="EquipmentDBModel.Equipment" />
+    <EntitySet Name="EquipmentLeasings" EntityType="EquipmentDBModel.EquipmentLeasing" />
+    <EntitySet Name="EquipmentTypes" EntityType="EquipmentDBModel.EquipmentType" />
+    <EntitySet Name="Manufacturers" EntityType="EquipmentDBModel.Manufacturer" />
+    <EntitySet Name="Organizations" EntityType="EquipmentDBModel.Organization" />
+    <EntitySet Name="Posts" EntityType="EquipmentDBModel.Post" />
+    <EntitySet Name="Rooms" EntityType="EquipmentDBModel.Room" />
+    <EntitySet Name="RoomEquipments" EntityType="EquipmentDBModel.RoomEquipment" />
+    <EntitySet Name="sysdiagrams" EntityType="EquipmentDBModel.sysdiagram" />
+    <EntitySet Name="Users" EntityType="EquipmentDBModel.User" />
+    <EntitySet Name="WriteOffEquipments" EntityType="EquipmentDBModel.WriteOffEquipment" />
+    <AssociationSet Name="FK_ROOM_REFERENCE_CORPS" Association="EquipmentDBModel.FK_ROOM_REFERENCE_CORPS">
+      <End Role="Corps" EntitySet="Corps" />
+      <End Role="Room" EntitySet="Rooms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPLOYEE_REFCE_ORGANIZATION" Association="EquipmentDBModel.FK_EMPLOYEE_REFCE_ORGANIZATION">
+      <End Role="Organization" EntitySet="Organizations" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPLOYEE_REFERENCE_EMPLOYEE" Association="EquipmentDBModel.FK_EMPLOYEE_REFERENCE_EMPLOYEE">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="EmployeeRoom" EntitySet="EmployeeRooms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPLOYEE_REFERENCE_POST" Association="EquipmentDBModel.FK_EMPLOYEE_REFERENCE_POST">
+      <End Role="Post" EntitySet="Posts" />
+      <End Role="Employee" EntitySet="Employees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EQUIP_REF_EMPLOYEE" Association="EquipmentDBModel.FK_EQUIP_REF_EMPLOYEE">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="EquipmentLeasing" EntitySet="EquipmentLeasings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EQUIPMEN_REFERENCE_EMPLOYEE" Association="EquipmentDBModel.FK_EQUIPMEN_REFERENCE_EMPLOYEE">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="EquipmentLeasing" EntitySet="EquipmentLeasings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_USER_REFERENCE_EMPLOYEE" Association="EquipmentDBModel.FK_USER_REFERENCE_EMPLOYEE">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMP_REFERENCE_EQUIPMENT" Association="EquipmentDBModel.FK_EMP_REFERENCE_EQUIPMENT">
+      <End Role="EquipmentLeasing" EntitySet="EquipmentLeasings" />
+      <End Role="EmployeeEquipment" EntitySet="EmployeeEquipments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPLOYEE_REFERENCE_EQUIPMEN" Association="EquipmentDBModel.FK_EMPLOYEE_REFERENCE_EQUIPMEN">
+      <End Role="Equipment" EntitySet="Equipments" />
+      <End Role="EmployeeEquipment" EntitySet="EmployeeEquipments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EMPLOYEE_REFERENCE_ROOM" Association="EquipmentDBModel.FK_EMPLOYEE_REFERENCE_ROOM">
+      <End Role="Room" EntitySet="Rooms" />
+      <End Role="EmployeeRoom" EntitySet="EmployeeRooms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EQUIPMEN_REFERENCE_EQUIPMEN" Association="EquipmentDBModel.FK_EQUIPMEN_REFERENCE_EQUIPMEN">
+      <End Role="EquipmentType" EntitySet="EquipmentTypes" />
+      <End Role="Equipment" EntitySet="Equipments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EQUIPMEN_REFERENCE_MANUFACT" Association="EquipmentDBModel.FK_EQUIPMEN_REFERENCE_MANUFACT">
+      <End Role="Manufacturer" EntitySet="Manufacturers" />
+      <End Role="Equipment" EntitySet="Equipments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ROOMEQUI_REFERENCE_EQUIPMEN" Association="EquipmentDBModel.FK_ROOMEQUI_REFERENCE_EQUIPMEN">
+      <End Role="Equipment" EntitySet="Equipments" />
+      <End Role="RoomEquipment" EntitySet="RoomEquipments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_WRITEOFF_REFERENCE_EQUIPMEN" Association="EquipmentDBModel.FK_WRITEOFF_REFERENCE_EQUIPMEN">
+      <End Role="Equipment" EntitySet="Equipments" />
+      <End Role="WriteOffEquipment" EntitySet="WriteOffEquipments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ROOMEQUI_REFERENCE_ROOM" Association="EquipmentDBModel.FK_ROOMEQUI_REFERENCE_ROOM">
+      <End Role="Room" EntitySet="Rooms" />
+      <End Role="RoomEquipment" EntitySet="RoomEquipments" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Corps">
+    <Key>
+      <PropertyRef Name="Corps_ID" />
+    </Key>
+    <Property Name="Corps_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CorpsName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Adress" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Rooms" Relationship="EquipmentDBModel.FK_ROOM_REFERENCE_CORPS" FromRole="Corps" ToRole="Room" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Employee_ID" />
+    </Key>
+    <Property Name="Employee_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Post_ID" Type="Int32" Nullable="false" />
+    <Property Name="Organization_ID" Type="Int32" />
+    <Property Name="FName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EmpName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Organization" Relationship="EquipmentDBModel.FK_EMPLOYEE_REFCE_ORGANIZATION" FromRole="Employee" ToRole="Organization" />
+    <NavigationProperty Name="EmployeeRooms" Relationship="EquipmentDBModel.FK_EMPLOYEE_REFERENCE_EMPLOYEE" FromRole="Employee" ToRole="EmployeeRoom" />
+    <NavigationProperty Name="Post" Relationship="EquipmentDBModel.FK_EMPLOYEE_REFERENCE_POST" FromRole="Employee" ToRole="Post" />
+    <NavigationProperty Name="EquipmentLeasings" Relationship="EquipmentDBModel.FK_EQUIP_REF_EMPLOYEE" FromRole="Employee" ToRole="EquipmentLeasing" />
+    <NavigationProperty Name="EquipmentLeasings1" Relationship="EquipmentDBModel.FK_EQUIPMEN_REFERENCE_EMPLOYEE" FromRole="Employee" ToRole="EquipmentLeasing" />
+    <NavigationProperty Name="Users" Relationship="EquipmentDBModel.FK_USER_REFERENCE_EMPLOYEE" FromRole="Employee" ToRole="User" />
+  </EntityType>
+  <EntityType Name="EmployeeEquipment">
+    <Key>
+      <PropertyRef Name="EmployeeEquipment_ID" />
+    </Key>
+    <Property Name="EmployeeEquipment_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EquipmentLeasing_ID" Type="Int32" Nullable="false" />
+    <Property Name="Equipment_ID" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="EquipmentLeasing" Relationship="EquipmentDBModel.FK_EMP_REFERENCE_EQUIPMENT" FromRole="EmployeeEquipment" ToRole="EquipmentLeasing" />
+    <NavigationProperty Name="Equipment" Relationship="EquipmentDBModel.FK_EMPLOYEE_REFERENCE_EQUIPMEN" FromRole="EmployeeEquipment" ToRole="Equipment" />
+  </EntityType>
+  <EntityType Name="EmployeeRoom">
+    <Key>
+      <PropertyRef Name="EmployeeRoom_ID" />
+    </Key>
+    <Property Name="EmployeeRoom_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Room_ID" Type="Int32" Nullable="false" />
+    <Property Name="Employee_ID" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Employee" Relationship="EquipmentDBModel.FK_EMPLOYEE_REFERENCE_EMPLOYEE" FromRole="EmployeeRoom" ToRole="Employee" />
+    <NavigationProperty Name="Room" Relationship="EquipmentDBModel.FK_EMPLOYEE_REFERENCE_ROOM" FromRole="EmployeeRoom" ToRole="Room" />
+  </EntityType>
+  <EntityType Name="Equipment">
+    <Key>
+      <PropertyRef Name="Equipment_ID" />
+    </Key>
+    <Property Name="Equipment_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Manufacturer_ID" Type="Int32" />
+    <Property Name="EquipmentType_ID" Type="Int32" />
+    <Property Name="Serial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EquipmentName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <Property Name="InventoryNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Notice" Type="String" MaxLength="2500" FixedLength="false" Unicode="false" />
+    <Property Name="Model" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="EmployeeEquipments" Relationship="EquipmentDBModel.FK_EMPLOYEE_REFERENCE_EQUIPMEN" FromRole="Equipment" ToRole="EmployeeEquipment" />
+    <NavigationProperty Name="EquipmentType" Relationship="EquipmentDBModel.FK_EQUIPMEN_REFERENCE_EQUIPMEN" FromRole="Equipment" ToRole="EquipmentType" />
+    <NavigationProperty Name="Manufacturer" Relationship="EquipmentDBModel.FK_EQUIPMEN_REFERENCE_MANUFACT" FromRole="Equipment" ToRole="Manufacturer" />
+    <NavigationProperty Name="RoomEquipments" Relationship="EquipmentDBModel.FK_ROOMEQUI_REFERENCE_EQUIPMEN" FromRole="Equipment" ToRole="RoomEquipment" />
+    <NavigationProperty Name="WriteOffEquipments" Relationship="EquipmentDBModel.FK_WRITEOFF_REFERENCE_EQUIPMEN" FromRole="Equipment" ToRole="WriteOffEquipment" />
+  </EntityType>
+  <EntityType Name="EquipmentLeasing">
+    <Key>
+      <PropertyRef Name="EquipmentLeasing_ID" />
+    </Key>
+    <Property Name="EquipmentLeasing_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeOut_ID" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeIn_ID" Type="Int32" Nullable="false" />
+    <Property Name="DateOfIssue" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DateReturn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsArchive" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Employee" Relationship="EquipmentDBModel.FK_EQUIP_REF_EMPLOYEE" FromRole="EquipmentLeasing" ToRole="Employee" />
+    <NavigationProperty Name="Employee1" Relationship="EquipmentDBModel.FK_EQUIPMEN_REFERENCE_EMPLOYEE" FromRole="EquipmentLeasing" ToRole="Employee" />
+    <NavigationProperty Name="EmployeeEquipments" Relationship="EquipmentDBModel.FK_EMP_REFERENCE_EQUIPMENT" FromRole="EquipmentLeasing" ToRole="EmployeeEquipment" />
+  </EntityType>
+  <EntityType Name="EquipmentType">
+    <Key>
+      <PropertyRef Name="EquipmentType_ID" />
+    </Key>
+    <Property Name="EquipmentType_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EquipmentTypeName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Equipments" Relationship="EquipmentDBModel.FK_EQUIPMEN_REFERENCE_EQUIPMEN" FromRole="EquipmentType" ToRole="Equipment" />
+  </EntityType>
+  <EntityType Name="Manufacturer">
+    <Key>
+      <PropertyRef Name="Manufacturer_ID" />
+    </Key>
+    <Property Name="Manufacturer_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ManufacturerName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Equipments" Relationship="EquipmentDBModel.FK_EQUIPMEN_REFERENCE_MANUFACT" FromRole="Manufacturer" ToRole="Equipment" />
+  </EntityType>
+  <EntityType Name="Organization">
+    <Key>
+      <PropertyRef Name="Organization_ID" />
+    </Key>
+    <Property Name="Organization_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrganizationName" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="ContactPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employees" Relationship="EquipmentDBModel.FK_EMPLOYEE_REFCE_ORGANIZATION" FromRole="Organization" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="Post_ID" />
+    </Key>
+    <Property Name="Post_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PostName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employees" Relationship="EquipmentDBModel.FK_EMPLOYEE_REFERENCE_POST" FromRole="Post" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="Room">
+    <Key>
+      <PropertyRef Name="Room_ID" />
+    </Key>
+    <Property Name="Room_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Corps_ID" Type="Int32" Nullable="false" />
+    <Property Name="RoomName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Corps" Relationship="EquipmentDBModel.FK_ROOM_REFERENCE_CORPS" FromRole="Room" ToRole="Corps" />
+    <NavigationProperty Name="EmployeeRooms" Relationship="EquipmentDBModel.FK_EMPLOYEE_REFERENCE_ROOM" FromRole="Room" ToRole="EmployeeRoom" />
+    <NavigationProperty Name="RoomEquipments" Relationship="EquipmentDBModel.FK_ROOMEQUI_REFERENCE_ROOM" FromRole="Room" ToRole="RoomEquipment" />
+  </EntityType>
+  <EntityType Name="RoomEquipment">
+    <Key>
+      <PropertyRef Name="RoomEquipment_ID" />
+    </Key>
+    <Property Name="RoomEquipment_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Room_ID" Type="Int32" Nullable="false" />
+    <Property Name="Equipment_ID" Type="Int32" Nullable="false" />
+    <Property Name="DateOfIssue" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Equipment" Relationship="EquipmentDBModel.FK_ROOMEQUI_REFERENCE_EQUIPMEN" FromRole="RoomEquipment" ToRole="Equipment" />
+    <NavigationProperty Name="Room" Relationship="EquipmentDBModel.FK_ROOMEQUI_REFERENCE_ROOM" FromRole="RoomEquipment" ToRole="Room" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="User_ID" />
+    </Key>
+    <Property Name="User_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Employee_ID" Type="Int32" Nullable="false" />
+    <Property Name="Login" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Employee" Relationship="EquipmentDBModel.FK_USER_REFERENCE_EMPLOYEE" FromRole="User" ToRole="Employee" />
+  </EntityType>
+  <EntityType Name="WriteOffEquipment">
+    <Key>
+      <PropertyRef Name="WriteOffEquipment_ID" />
+    </Key>
+    <Property Name="WriteOffEquipment_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Equipment_ID" Type="Int32" Nullable="false" />
+    <Property Name="OrderNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Equipment" Relationship="EquipmentDBModel.FK_WRITEOFF_REFERENCE_EQUIPMEN" FromRole="WriteOffEquipment" ToRole="Equipment" />
+  </EntityType>
+  <Association Name="FK_ROOM_REFERENCE_CORPS">
+    <End Type="EquipmentDBModel.Corps" Role="Corps" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="EquipmentDBModel.Room" Role="Room" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Corps">
+        <PropertyRef Name="Corps_ID" />
+      </Principal>
+      <Dependent Role="Room">
+        <PropertyRef Name="Corps_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPLOYEE_REFCE_ORGANIZATION">
+    <End Type="EquipmentDBModel.Organization" Role="Organization" Multiplicity="0..1" />
+    <End Type="EquipmentDBModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Organization">
+        <PropertyRef Name="Organization_ID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Organization_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPLOYEE_REFERENCE_EMPLOYEE">
+    <End Type="EquipmentDBModel.Employee" Role="Employee" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="EquipmentDBModel.EmployeeRoom" Role="EmployeeRoom" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="EmployeeRoom">
+        <PropertyRef Name="Employee_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPLOYEE_REFERENCE_POST">
+    <End Type="EquipmentDBModel.Post" Role="Post" Multiplicity="1" />
+    <End Type="EquipmentDBModel.Employee" Role="Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="Post_ID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Post_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EQUIP_REF_EMPLOYEE">
+    <End Type="EquipmentDBModel.Employee" Role="Employee" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="EquipmentDBModel.EquipmentLeasing" Role="EquipmentLeasing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="EquipmentLeasing">
+        <PropertyRef Name="EmployeeOut_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EQUIPMEN_REFERENCE_EMPLOYEE">
+    <End Type="EquipmentDBModel.Employee" Role="Employee" Multiplicity="1" />
+    <End Type="EquipmentDBModel.EquipmentLeasing" Role="EquipmentLeasing" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="EquipmentLeasing">
+        <PropertyRef Name="EmployeeIn_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_USER_REFERENCE_EMPLOYEE">
+    <End Type="EquipmentDBModel.Employee" Role="Employee" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="EquipmentDBModel.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Employee_ID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="Employee_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMP_REFERENCE_EQUIPMENT">
+    <End Type="EquipmentDBModel.EquipmentLeasing" Role="EquipmentLeasing" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="EquipmentDBModel.EmployeeEquipment" Role="EmployeeEquipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EquipmentLeasing">
+        <PropertyRef Name="EquipmentLeasing_ID" />
+      </Principal>
+      <Dependent Role="EmployeeEquipment">
+        <PropertyRef Name="EquipmentLeasing_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPLOYEE_REFERENCE_EQUIPMEN">
+    <End Type="EquipmentDBModel.Equipment" Role="Equipment" Multiplicity="1" />
+    <End Type="EquipmentDBModel.EmployeeEquipment" Role="EmployeeEquipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipment">
+        <PropertyRef Name="Equipment_ID" />
+      </Principal>
+      <Dependent Role="EmployeeEquipment">
+        <PropertyRef Name="Equipment_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EMPLOYEE_REFERENCE_ROOM">
+    <End Type="EquipmentDBModel.Room" Role="Room" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="EquipmentDBModel.EmployeeRoom" Role="EmployeeRoom" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Room">
+        <PropertyRef Name="Room_ID" />
+      </Principal>
+      <Dependent Role="EmployeeRoom">
+        <PropertyRef Name="Room_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EQUIPMEN_REFERENCE_EQUIPMEN">
+    <End Type="EquipmentDBModel.EquipmentType" Role="EquipmentType" Multiplicity="0..1" />
+    <End Type="EquipmentDBModel.Equipment" Role="Equipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EquipmentType">
+        <PropertyRef Name="EquipmentType_ID" />
+      </Principal>
+      <Dependent Role="Equipment">
+        <PropertyRef Name="EquipmentType_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EQUIPMEN_REFERENCE_MANUFACT">
+    <End Type="EquipmentDBModel.Manufacturer" Role="Manufacturer" Multiplicity="0..1" />
+    <End Type="EquipmentDBModel.Equipment" Role="Equipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manufacturer">
+        <PropertyRef Name="Manufacturer_ID" />
+      </Principal>
+      <Dependent Role="Equipment">
+        <PropertyRef Name="Manufacturer_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ROOMEQUI_REFERENCE_EQUIPMEN">
+    <End Type="EquipmentDBModel.Equipment" Role="Equipment" Multiplicity="1" />
+    <End Type="EquipmentDBModel.RoomEquipment" Role="RoomEquipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipment">
+        <PropertyRef Name="Equipment_ID" />
+      </Principal>
+      <Dependent Role="RoomEquipment">
+        <PropertyRef Name="Equipment_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_WRITEOFF_REFERENCE_EQUIPMEN">
+    <End Type="EquipmentDBModel.Equipment" Role="Equipment" Multiplicity="1" />
+    <End Type="EquipmentDBModel.WriteOffEquipment" Role="WriteOffEquipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipment">
+        <PropertyRef Name="Equipment_ID" />
+      </Principal>
+      <Dependent Role="WriteOffEquipment">
+        <PropertyRef Name="Equipment_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ROOMEQUI_REFERENCE_ROOM">
+    <End Type="EquipmentDBModel.Room" Role="Room" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="EquipmentDBModel.RoomEquipment" Role="RoomEquipment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Room">
+        <PropertyRef Name="Room_ID" />
+      </Principal>
+      <Dependent Role="RoomEquipment">
+        <PropertyRef Name="Room_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

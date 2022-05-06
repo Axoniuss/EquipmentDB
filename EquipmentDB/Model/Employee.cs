@@ -29,7 +29,6 @@ namespace EquipmentDB.Model
         public string EmpName { get; set; }
         public string LName { get; set; }
         public string Phone { get; set; }
-        public bool IsArchive { get; set; }
     
         public virtual Organization Organization { get; set; }
         public virtual ICollection<EmployeeRoom> EmployeeRooms { get; set; }

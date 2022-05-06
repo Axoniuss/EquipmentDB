@@ -49,12 +49,12 @@ namespace EquipmentDB.Forms.ReferenceForms
             this.dataGridViewImageColumn13 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn14 = new System.Windows.Forms.DataGridViewImageColumn();
             this.buttonAddStatus = new System.Windows.Forms.Button();
-            this.organizationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.EditColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.DeleteColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.organizationIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.organizationNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contactPhoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EditColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.DeleteColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.organizationBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.organizationBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -116,7 +116,7 @@ namespace EquipmentDB.Forms.ReferenceForms
             this.EditColumn,
             this.DeleteColumn});
             this.dataGridView.DataSource = this.organizationBindingSource;
-            this.dataGridView.Location = new System.Drawing.Point(12, 69);
+            this.dataGridView.Location = new System.Drawing.Point(12, 12);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
@@ -189,6 +189,7 @@ namespace EquipmentDB.Forms.ReferenceForms
             this.dataGridViewImageColumn13.HeaderText = "";
             this.dataGridViewImageColumn13.Image = global::EquipmentDB.Properties.Resources.edit_16;
             this.dataGridViewImageColumn13.Name = "dataGridViewImageColumn13";
+            this.dataGridViewImageColumn13.ReadOnly = true;
             this.dataGridViewImageColumn13.Width = 30;
             // 
             // dataGridViewImageColumn14
@@ -196,17 +197,18 @@ namespace EquipmentDB.Forms.ReferenceForms
             this.dataGridViewImageColumn14.HeaderText = "";
             this.dataGridViewImageColumn14.Image = global::EquipmentDB.Properties.Resources.delete_16;
             this.dataGridViewImageColumn14.Name = "dataGridViewImageColumn14";
+            this.dataGridViewImageColumn14.ReadOnly = true;
             this.dataGridViewImageColumn14.Width = 30;
             // 
             // buttonAddStatus
             // 
-            this.buttonAddStatus.BackColor = System.Drawing.Color.Gainsboro;
+            this.buttonAddStatus.BackColor = System.Drawing.Color.OldLace;
             this.buttonAddStatus.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonAddStatus.FlatAppearance.BorderSize = 2;
             this.buttonAddStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddStatus.Image = global::EquipmentDB.Properties.Resources.add;
             this.buttonAddStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAddStatus.Location = new System.Drawing.Point(12, 12);
+            this.buttonAddStatus.Location = new System.Drawing.Point(12, 278);
             this.buttonAddStatus.Name = "buttonAddStatus";
             this.buttonAddStatus.Size = new System.Drawing.Size(192, 33);
             this.buttonAddStatus.TabIndex = 3;
@@ -214,9 +216,21 @@ namespace EquipmentDB.Forms.ReferenceForms
             this.buttonAddStatus.UseVisualStyleBackColor = false;
             this.buttonAddStatus.Click += new System.EventHandler(this.buttonAddStatus_Click_1);
             // 
-            // organizationBindingSource
+            // EditColumn
             // 
-            this.organizationBindingSource.DataSource = typeof(Organization);
+            this.EditColumn.HeaderText = "";
+            this.EditColumn.Image = global::EquipmentDB.Properties.Resources.edit_16;
+            this.EditColumn.Name = "EditColumn";
+            this.EditColumn.ReadOnly = true;
+            this.EditColumn.Width = 30;
+            // 
+            // DeleteColumn
+            // 
+            this.DeleteColumn.HeaderText = "";
+            this.DeleteColumn.Image = global::EquipmentDB.Properties.Resources.delete_16;
+            this.DeleteColumn.Name = "DeleteColumn";
+            this.DeleteColumn.ReadOnly = true;
+            this.DeleteColumn.Width = 30;
             // 
             // organizationIDDataGridViewTextBoxColumn
             // 
@@ -242,21 +256,9 @@ namespace EquipmentDB.Forms.ReferenceForms
             this.contactPhoneDataGridViewTextBoxColumn.Name = "contactPhoneDataGridViewTextBoxColumn";
             this.contactPhoneDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // EditColumn
+            // organizationBindingSource
             // 
-            this.EditColumn.HeaderText = "";
-            this.EditColumn.Image = global::EquipmentDB.Properties.Resources.edit_16;
-            this.EditColumn.Name = "EditColumn";
-            this.EditColumn.ReadOnly = true;
-            this.EditColumn.Width = 30;
-            // 
-            // DeleteColumn
-            // 
-            this.DeleteColumn.HeaderText = "";
-            this.DeleteColumn.Image = global::EquipmentDB.Properties.Resources.delete_16;
-            this.DeleteColumn.Name = "DeleteColumn";
-            this.DeleteColumn.ReadOnly = true;
-            this.DeleteColumn.Width = 30;
+            this.organizationBindingSource.DataSource = typeof(EquipmentDB.Model.Organization);
             // 
             // OrganizationsForm
             // 

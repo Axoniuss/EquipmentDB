@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.buttonAddEdit = new System.Windows.Forms.Button();
-
-            this.label2 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxRoom = new System.Windows.Forms.ComboBox();
@@ -52,29 +50,19 @@
             // 
             this.buttonAddEdit.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonAddEdit.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonAddEdit.BackColor = System.Drawing.Color.OldLace;
             this.buttonAddEdit.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonAddEdit.FlatAppearance.BorderSize = 2;
             this.buttonAddEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAddEdit.Image = global::EquipmentDB.Properties.Resources.add;
             this.buttonAddEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAddEdit.Location = new System.Drawing.Point(24, 365);
+            this.buttonAddEdit.Location = new System.Drawing.Point(17, 318);
             this.buttonAddEdit.Name = "buttonAddEdit";
             this.buttonAddEdit.Size = new System.Drawing.Size(152, 34);
             this.buttonAddEdit.TabIndex = 2;
             this.buttonAddEdit.Text = "Добавить";
             this.buttonAddEdit.UseVisualStyleBackColor = false;
             this.buttonAddEdit.Click += new System.EventHandler(this.buttonAddEdit_Click);
-            // 
-     
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(47, 15);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Номер гимназии";
             // 
             // errorProvider1
             // 
@@ -84,7 +72,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 69);
+            this.label3.Location = new System.Drawing.Point(14, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 15);
             this.label3.TabIndex = 0;
@@ -94,14 +82,15 @@
             // 
             this.comboBoxRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxRoom.FormattingEnabled = true;
-            this.comboBoxRoom.Location = new System.Drawing.Point(21, 92);
+            this.comboBoxRoom.Location = new System.Drawing.Point(14, 42);
             this.comboBoxRoom.Name = "comboBoxRoom";
             this.comboBoxRoom.Size = new System.Drawing.Size(355, 23);
             this.comboBoxRoom.TabIndex = 3;
+            this.comboBoxRoom.SelectedIndexChanged += new System.EventHandler(this.comboBoxRoom_SelectedIndexChanged);
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(21, 146);
+            this.numericUpDown1.Location = new System.Drawing.Point(14, 96);
             this.numericUpDown1.Minimum = new decimal(new int[] {
             1,
             0,
@@ -120,7 +109,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 123);
+            this.label1.Location = new System.Drawing.Point(14, 73);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 15);
             this.label1.TabIndex = 0;
@@ -128,7 +117,7 @@
             // 
             // textBoxEquip
             // 
-            this.textBoxEquip.Location = new System.Drawing.Point(21, 236);
+            this.textBoxEquip.Location = new System.Drawing.Point(14, 186);
             this.textBoxEquip.Multiline = true;
             this.textBoxEquip.Name = "textBoxEquip";
             this.textBoxEquip.ReadOnly = true;
@@ -139,7 +128,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(17, 336);
+            this.label4.Location = new System.Drawing.Point(10, 286);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(137, 15);
             this.label4.TabIndex = 6;
@@ -149,14 +138,14 @@
             // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonCancel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonCancel.BackColor = System.Drawing.Color.OldLace;
             this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonCancel.FlatAppearance.BorderSize = 2;
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCancel.Image = global::EquipmentDB.Properties.Resources.cancel;
+            this.buttonCancel.Image = global::EquipmentDB.Properties.Resources.delete_16;
             this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancel.Location = new System.Drawing.Point(215, 365);
+            this.buttonCancel.Location = new System.Drawing.Point(208, 318);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(152, 34);
             this.buttonCancel.TabIndex = 2;
@@ -165,13 +154,13 @@
             // 
             // buttonSearchEquipment
             // 
-            this.buttonSearchEquipment.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.buttonSearchEquipment.BackColor = System.Drawing.Color.OldLace;
             this.buttonSearchEquipment.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonSearchEquipment.FlatAppearance.BorderSize = 2;
             this.buttonSearchEquipment.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSearchEquipment.Image = global::EquipmentDB.Properties.Resources.search_24;
             this.buttonSearchEquipment.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSearchEquipment.Location = new System.Drawing.Point(21, 196);
+            this.buttonSearchEquipment.Location = new System.Drawing.Point(14, 146);
             this.buttonSearchEquipment.Name = "buttonSearchEquipment";
             this.buttonSearchEquipment.Size = new System.Drawing.Size(355, 34);
             this.buttonSearchEquipment.TabIndex = 2;
@@ -183,7 +172,7 @@
             // 
             this.labelInventory.AutoSize = true;
             this.labelInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelInventory.Location = new System.Drawing.Point(160, 336);
+            this.labelInventory.Location = new System.Drawing.Point(153, 286);
             this.labelInventory.Name = "labelInventory";
             this.labelInventory.Size = new System.Drawing.Size(12, 15);
             this.labelInventory.TabIndex = 6;
@@ -193,7 +182,7 @@
             // 
             this.labelAva.AutoSize = true;
             this.labelAva.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelAva.Location = new System.Drawing.Point(227, 148);
+            this.labelAva.Location = new System.Drawing.Point(220, 98);
             this.labelAva.Name = "labelAva";
             this.labelAva.Size = new System.Drawing.Size(12, 15);
             this.labelAva.TabIndex = 6;
@@ -203,7 +192,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(100, 148);
+            this.label7.Location = new System.Drawing.Point(93, 98);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(127, 15);
             this.label7.TabIndex = 6;
@@ -214,7 +203,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(387, 411);
+            this.ClientSize = new System.Drawing.Size(387, 364);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.labelAva);
             this.Controls.Add(this.labelInventory);
@@ -227,11 +216,11 @@
             this.Controls.Add(this.buttonAddEdit);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AddEditRoomEquipmentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.AddEditRoomEquipmentForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
@@ -243,7 +232,6 @@
 
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonAddEdit;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxEquip;

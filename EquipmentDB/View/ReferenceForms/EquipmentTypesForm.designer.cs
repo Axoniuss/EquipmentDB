@@ -39,6 +39,11 @@ namespace EquipmentDB.Forms.ReferenceForms
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.equipmentTypeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.equipmentTypeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EditColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.DeleteColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.equipmentTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn6 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn7 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -50,11 +55,6 @@ namespace EquipmentDB.Forms.ReferenceForms
             this.dataGridViewImageColumn13 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn14 = new System.Windows.Forms.DataGridViewImageColumn();
             this.buttonAddStatus = new System.Windows.Forms.Button();
-            this.EditColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.DeleteColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.equipmentTypeIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.equipmentTypeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.equipmentTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.equipmentTypeBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -115,7 +115,7 @@ namespace EquipmentDB.Forms.ReferenceForms
             this.EditColumn,
             this.DeleteColumn});
             this.dataGridView.DataSource = this.equipmentTypeBindingSource;
-            this.dataGridView.Location = new System.Drawing.Point(12, 69);
+            this.dataGridView.Location = new System.Drawing.Point(12, 12);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
@@ -124,6 +124,44 @@ namespace EquipmentDB.Forms.ReferenceForms
             this.dataGridView.Size = new System.Drawing.Size(552, 242);
             this.dataGridView.TabIndex = 2;
             this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
+            // 
+            // equipmentTypeIDDataGridViewTextBoxColumn
+            // 
+            this.equipmentTypeIDDataGridViewTextBoxColumn.DataPropertyName = "EquipmentType_ID";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.equipmentTypeIDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.equipmentTypeIDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.equipmentTypeIDDataGridViewTextBoxColumn.Name = "equipmentTypeIDDataGridViewTextBoxColumn";
+            this.equipmentTypeIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.equipmentTypeIDDataGridViewTextBoxColumn.Width = 60;
+            // 
+            // equipmentTypeNameDataGridViewTextBoxColumn
+            // 
+            this.equipmentTypeNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.equipmentTypeNameDataGridViewTextBoxColumn.DataPropertyName = "EquipmentTypeName";
+            this.equipmentTypeNameDataGridViewTextBoxColumn.HeaderText = "Наименование типа оборудования";
+            this.equipmentTypeNameDataGridViewTextBoxColumn.Name = "equipmentTypeNameDataGridViewTextBoxColumn";
+            this.equipmentTypeNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // EditColumn
+            // 
+            this.EditColumn.HeaderText = "";
+            this.EditColumn.Image = global::EquipmentDB.Properties.Resources.edit_16;
+            this.EditColumn.Name = "EditColumn";
+            this.EditColumn.ReadOnly = true;
+            this.EditColumn.Width = 30;
+            // 
+            // DeleteColumn
+            // 
+            this.DeleteColumn.HeaderText = "";
+            this.DeleteColumn.Image = global::EquipmentDB.Properties.Resources.delete_16;
+            this.DeleteColumn.Name = "DeleteColumn";
+            this.DeleteColumn.ReadOnly = true;
+            this.DeleteColumn.Width = 30;
+            // 
+            // equipmentTypeBindingSource
+            // 
+            this.equipmentTypeBindingSource.DataSource = typeof(EquipmentDB.Model.EquipmentType);
             // 
             // dataGridViewImageColumn5
             // 
@@ -199,57 +237,19 @@ namespace EquipmentDB.Forms.ReferenceForms
             // 
             // buttonAddStatus
             // 
-            this.buttonAddStatus.BackColor = System.Drawing.Color.Gainsboro;
+            this.buttonAddStatus.BackColor = System.Drawing.Color.OldLace;
             this.buttonAddStatus.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonAddStatus.FlatAppearance.BorderSize = 2;
             this.buttonAddStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddStatus.Image = global::EquipmentDB.Properties.Resources.add;
             this.buttonAddStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAddStatus.Location = new System.Drawing.Point(12, 12);
+            this.buttonAddStatus.Location = new System.Drawing.Point(12, 278);
             this.buttonAddStatus.Name = "buttonAddStatus";
             this.buttonAddStatus.Size = new System.Drawing.Size(192, 33);
             this.buttonAddStatus.TabIndex = 3;
             this.buttonAddStatus.Text = "Добавить";
             this.buttonAddStatus.UseVisualStyleBackColor = false;
             this.buttonAddStatus.Click += new System.EventHandler(this.buttonAddStatus_Click_1);
-            // 
-            // EditColumn
-            // 
-            this.EditColumn.HeaderText = "";
-            this.EditColumn.Image = global::EquipmentDB.Properties.Resources.edit_16;
-            this.EditColumn.Name = "EditColumn";
-            this.EditColumn.ReadOnly = true;
-            this.EditColumn.Width = 30;
-            // 
-            // DeleteColumn
-            // 
-            this.DeleteColumn.HeaderText = "";
-            this.DeleteColumn.Image = global::EquipmentDB.Properties.Resources.delete_16;
-            this.DeleteColumn.Name = "DeleteColumn";
-            this.DeleteColumn.ReadOnly = true;
-            this.DeleteColumn.Width = 30;
-            // 
-            // equipmentTypeIDDataGridViewTextBoxColumn
-            // 
-            this.equipmentTypeIDDataGridViewTextBoxColumn.DataPropertyName = "EquipmentType_ID";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.equipmentTypeIDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.equipmentTypeIDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.equipmentTypeIDDataGridViewTextBoxColumn.Name = "equipmentTypeIDDataGridViewTextBoxColumn";
-            this.equipmentTypeIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.equipmentTypeIDDataGridViewTextBoxColumn.Width = 60;
-            // 
-            // equipmentTypeNameDataGridViewTextBoxColumn
-            // 
-            this.equipmentTypeNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.equipmentTypeNameDataGridViewTextBoxColumn.DataPropertyName = "EquipmentTypeName";
-            this.equipmentTypeNameDataGridViewTextBoxColumn.HeaderText = "Наименование типа оборудования";
-            this.equipmentTypeNameDataGridViewTextBoxColumn.Name = "equipmentTypeNameDataGridViewTextBoxColumn";
-            this.equipmentTypeNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // equipmentTypeBindingSource
-            // 
-            this.equipmentTypeBindingSource.DataSource = typeof(EquipmentType);
             // 
             // EquipmentTypesForm
             // 

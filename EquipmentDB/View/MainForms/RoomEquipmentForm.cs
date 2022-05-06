@@ -54,7 +54,7 @@ namespace EquipmentDB.Forms.MainForms
             if (e.ColumnIndex == dataGridView.Columns["DeleteColumn"].Index)
             {
                 var item = dataGridView.SelectedRows[0].DataBoundItem as RoomEquipment;
-                var result = MessageBox.Show("Удалить запись с ID " + item.Room_ID + " и вернуть оборудование на склад?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                var result = MessageBox.Show("Удалить запись с ID " + item.Room_ID + " и вернуть оборудование в гимназию?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (result != DialogResult.OK) return;
 
                 try

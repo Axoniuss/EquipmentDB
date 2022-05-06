@@ -39,6 +39,11 @@ namespace EquipmentDB.Forms.ReferenceForms
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.manufacturerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.manufacturerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EditColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.DeleteColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.manufacturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn6 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn7 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -50,11 +55,6 @@ namespace EquipmentDB.Forms.ReferenceForms
             this.dataGridViewImageColumn13 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn14 = new System.Windows.Forms.DataGridViewImageColumn();
             this.buttonAddStatus = new System.Windows.Forms.Button();
-            this.EditColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.DeleteColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.manufacturerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.manufacturerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.manufacturerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.manufacturerBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -115,7 +115,7 @@ namespace EquipmentDB.Forms.ReferenceForms
             this.EditColumn,
             this.DeleteColumn});
             this.dataGridView.DataSource = this.manufacturerBindingSource;
-            this.dataGridView.Location = new System.Drawing.Point(12, 69);
+            this.dataGridView.Location = new System.Drawing.Point(3, 12);
             this.dataGridView.MultiSelect = false;
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
@@ -124,6 +124,44 @@ namespace EquipmentDB.Forms.ReferenceForms
             this.dataGridView.Size = new System.Drawing.Size(552, 242);
             this.dataGridView.TabIndex = 2;
             this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
+            // 
+            // manufacturerIDDataGridViewTextBoxColumn
+            // 
+            this.manufacturerIDDataGridViewTextBoxColumn.DataPropertyName = "Manufacturer_ID";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.manufacturerIDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.manufacturerIDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.manufacturerIDDataGridViewTextBoxColumn.Name = "manufacturerIDDataGridViewTextBoxColumn";
+            this.manufacturerIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.manufacturerIDDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // manufacturerNameDataGridViewTextBoxColumn
+            // 
+            this.manufacturerNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.manufacturerNameDataGridViewTextBoxColumn.DataPropertyName = "ManufacturerName";
+            this.manufacturerNameDataGridViewTextBoxColumn.HeaderText = "Наименование фирмы изготовителя";
+            this.manufacturerNameDataGridViewTextBoxColumn.Name = "manufacturerNameDataGridViewTextBoxColumn";
+            this.manufacturerNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // EditColumn
+            // 
+            this.EditColumn.HeaderText = "";
+            this.EditColumn.Image = global::EquipmentDB.Properties.Resources.edit_16;
+            this.EditColumn.Name = "EditColumn";
+            this.EditColumn.ReadOnly = true;
+            this.EditColumn.Width = 30;
+            // 
+            // DeleteColumn
+            // 
+            this.DeleteColumn.HeaderText = "";
+            this.DeleteColumn.Image = global::EquipmentDB.Properties.Resources.delete_16;
+            this.DeleteColumn.Name = "DeleteColumn";
+            this.DeleteColumn.ReadOnly = true;
+            this.DeleteColumn.Width = 30;
+            // 
+            // manufacturerBindingSource
+            // 
+            this.manufacturerBindingSource.DataSource = typeof(EquipmentDB.Model.Manufacturer);
             // 
             // dataGridViewImageColumn5
             // 
@@ -199,57 +237,19 @@ namespace EquipmentDB.Forms.ReferenceForms
             // 
             // buttonAddStatus
             // 
-            this.buttonAddStatus.BackColor = System.Drawing.Color.Gainsboro;
+            this.buttonAddStatus.BackColor = System.Drawing.Color.OldLace;
             this.buttonAddStatus.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonAddStatus.FlatAppearance.BorderSize = 2;
             this.buttonAddStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAddStatus.Image = global::EquipmentDB.Properties.Resources.add;
             this.buttonAddStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonAddStatus.Location = new System.Drawing.Point(12, 12);
+            this.buttonAddStatus.Location = new System.Drawing.Point(12, 278);
             this.buttonAddStatus.Name = "buttonAddStatus";
             this.buttonAddStatus.Size = new System.Drawing.Size(192, 33);
             this.buttonAddStatus.TabIndex = 3;
             this.buttonAddStatus.Text = "Добавить";
             this.buttonAddStatus.UseVisualStyleBackColor = false;
             this.buttonAddStatus.Click += new System.EventHandler(this.buttonAddStatus_Click_1);
-            // 
-            // EditColumn
-            // 
-            this.EditColumn.HeaderText = "";
-            this.EditColumn.Image = global::EquipmentDB.Properties.Resources.edit_16;
-            this.EditColumn.Name = "EditColumn";
-            this.EditColumn.ReadOnly = true;
-            this.EditColumn.Width = 30;
-            // 
-            // DeleteColumn
-            // 
-            this.DeleteColumn.HeaderText = "";
-            this.DeleteColumn.Image = global::EquipmentDB.Properties.Resources.delete_16;
-            this.DeleteColumn.Name = "DeleteColumn";
-            this.DeleteColumn.ReadOnly = true;
-            this.DeleteColumn.Width = 30;
-            // 
-            // manufacturerIDDataGridViewTextBoxColumn
-            // 
-            this.manufacturerIDDataGridViewTextBoxColumn.DataPropertyName = "Manufacturer_ID";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.manufacturerIDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.manufacturerIDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.manufacturerIDDataGridViewTextBoxColumn.Name = "manufacturerIDDataGridViewTextBoxColumn";
-            this.manufacturerIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.manufacturerIDDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // manufacturerNameDataGridViewTextBoxColumn
-            // 
-            this.manufacturerNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.manufacturerNameDataGridViewTextBoxColumn.DataPropertyName = "ManufacturerName";
-            this.manufacturerNameDataGridViewTextBoxColumn.HeaderText = "Наименование фирмы изготовителя";
-            this.manufacturerNameDataGridViewTextBoxColumn.Name = "manufacturerNameDataGridViewTextBoxColumn";
-            this.manufacturerNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // manufacturerBindingSource
-            // 
-            this.manufacturerBindingSource.DataSource = typeof(Manufacturer);
             // 
             // ManufacturersForm
             // 

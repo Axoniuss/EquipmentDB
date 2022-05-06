@@ -62,7 +62,8 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>iconfinder_pc_38745.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
@@ -185,12 +186,6 @@
     <Compile Include="View\AddEditForms\AddEditOrganizationForm.designer.cs">
       <DependentUpon>AddEditOrganizationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\AddEditForms\AddEditPostForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\AddEditForms\AddEditPostForm.designer.cs">
-      <DependentUpon>AddEditPostForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\AddEditForms\AddEditManufacturerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,12 +197,6 @@
     </Compile>
     <Compile Include="View\AddEditForms\AddEditEquipmentTypeForm.designer.cs">
       <DependentUpon>AddEditEquipmentTypeForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\AddEditForms\AddEditCorpsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\AddEditForms\AddEditCorpsForm.designer.cs">
-      <DependentUpon>AddEditCorpsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\AddEditForms\AddEditEmployeeForm.cs">
       <SubType>Form</SubType>
@@ -233,35 +222,11 @@
     <Compile Include="View\AddEditForms\AddEditRoomEquipmentForm.designer.cs">
       <DependentUpon>AddEditRoomEquipmentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\AddEditForms\AddEditEquipmentLeasingForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\AddEditForms\AddEditEquipmentLeasingForm.designer.cs">
-      <DependentUpon>AddEditEquipmentLeasingForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\AddEditForms\AddEditUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\AddEditForms\AddEditUserForm.designer.cs">
       <DependentUpon>AddEditUserForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\AddEditForms\AddEditEmployeeEquipmentForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\AddEditForms\AddEditEmployeeEquipmentForm.designer.cs">
-      <DependentUpon>AddEditEmployeeEquipmentForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\AddEditForms\AddEditEmployeeRoomForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\AddEditForms\AddEditEmployeeRoomForm.designer.cs">
-      <DependentUpon>AddEditEmployeeRoomForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\AddEditForms\AddEditWriteOffEquipmentForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\AddEditForms\AddEditWriteOffEquipmentForm.designer.cs">
-      <DependentUpon>AddEditWriteOffEquipmentForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\AboutForm.cs">
       <SubType>Form</SubType>
@@ -299,65 +264,17 @@
     <Compile Include="View\MainForms\RoomEquipmentForm.designer.cs">
       <DependentUpon>RoomEquipmentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\MainForms\EquipmentLeasingForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\MainForms\EquipmentLeasingForm.designer.cs">
-      <DependentUpon>EquipmentLeasingForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\MainForms\UsersForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\MainForms\UsersForm.designer.cs">
       <DependentUpon>UsersForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\MainForms\EmployeeEquipmentForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\MainForms\EmployeeEquipmentForm.designer.cs">
-      <DependentUpon>EmployeeEquipmentForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\MainForms\EmployeeRoomsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\MainForms\EmployeeRoomsForm.designer.cs">
-      <DependentUpon>EmployeeRoomsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\MainForms\WriteOffEquipmentsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\MainForms\WriteOffEquipmentsForm.designer.cs">
-      <DependentUpon>WriteOffEquipmentsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\MainForms\RoomPassportForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\MainForms\RoomPassportForm.designer.cs">
-      <DependentUpon>RoomPassportForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\MainForms\EmployeeEquipmentReportForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\MainForms\EmployeeEquipmentReportForm.designer.cs">
-      <DependentUpon>EmployeeEquipmentReportForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\MainForms\VerificationEquipmentForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\MainForms\VerificationEquipmentForm.designer.cs">
-      <DependentUpon>VerificationEquipmentForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\ReferenceForms\OrganizationsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\ReferenceForms\OrganizationsForm.designer.cs">
       <DependentUpon>OrganizationsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="View\ReferenceForms\PostsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\ReferenceForms\PostsForm.designer.cs">
-      <DependentUpon>PostsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\MainForms\RoomsForm.cs">
       <SubType>Form</SubType>
@@ -379,26 +296,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TemplateFiller\VerificationTemplate.cs" />
-    <Compile Include="TemplateFiller\EmployeeTemplate.cs" />
-    <Compile Include="TemplateFiller\EquipmentLeasingTemplate.cs" />
-    <Compile Include="TemplateFiller\IWordTemplate.cs" />
-    <Compile Include="TemplateFiller\RoomPassportTemplate.cs" />
-    <Compile Include="TemplateFiller\WordTemplateFiller.cs" />
     <EmbeddedResource Include="View\AddEditForms\AddEditOrganizationForm.resx">
       <DependentUpon>AddEditOrganizationForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\AddEditForms\AddEditPostForm.resx">
-      <DependentUpon>AddEditPostForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\AddEditForms\AddEditManufacturerForm.resx">
       <DependentUpon>AddEditManufacturerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\AddEditForms\AddEditEquipmentTypeForm.resx">
       <DependentUpon>AddEditEquipmentTypeForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\AddEditForms\AddEditCorpsForm.resx">
-      <DependentUpon>AddEditCorpsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\AddEditForms\AddEditEmployeeForm.resx">
       <DependentUpon>AddEditEmployeeForm.cs</DependentUpon>
@@ -412,20 +317,8 @@
     <EmbeddedResource Include="View\AddEditForms\AddEditRoomEquipmentForm.resx">
       <DependentUpon>AddEditRoomEquipmentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\AddEditForms\AddEditEquipmentLeasingForm.resx">
-      <DependentUpon>AddEditEquipmentLeasingForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\AddEditForms\AddEditUserForm.resx">
       <DependentUpon>AddEditUserForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\AddEditForms\AddEditEmployeeEquipmentForm.resx">
-      <DependentUpon>AddEditEmployeeEquipmentForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\AddEditForms\AddEditEmployeeRoomForm.resx">
-      <DependentUpon>AddEditEmployeeRoomForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\AddEditForms\AddEditWriteOffEquipmentForm.resx">
-      <DependentUpon>AddEditWriteOffEquipmentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
@@ -446,36 +339,11 @@
     <EmbeddedResource Include="View\MainForms\RoomEquipmentForm.resx">
       <DependentUpon>RoomEquipmentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\MainForms\EquipmentLeasingForm.resx">
-      <DependentUpon>EquipmentLeasingForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\MainForms\UsersForm.resx">
       <DependentUpon>UsersForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\MainForms\EmployeeEquipmentForm.resx">
-      <DependentUpon>EmployeeEquipmentForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\MainForms\EmployeeRoomsForm.resx">
-      <DependentUpon>EmployeeRoomsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\MainForms\WriteOffEquipmentsForm.resx">
-      <DependentUpon>WriteOffEquipmentsForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\MainForms\RoomPassportForm.resx">
-      <DependentUpon>RoomPassportForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\MainForms\EmployeeEquipmentReportForm.resx">
-      <DependentUpon>EmployeeEquipmentReportForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\MainForms\VerificationEquipmentForm.resx">
-      <DependentUpon>VerificationEquipmentForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\ReferenceForms\OrganizationsForm.resx">
       <DependentUpon>OrganizationsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="View\ReferenceForms\PostsForm.resx">
-      <DependentUpon>PostsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainForms\RoomsForm.resx">
       <DependentUpon>RoomsForm.cs</DependentUpon>
@@ -501,9 +369,6 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Help\Operator Manual.pdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="Model\Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </None>
@@ -627,7 +492,6 @@
     <None Include="Resources\iconfinder_pending-wait-time-revise-unfinish_3209435.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="iconfinder_pc_38745.ico" />
     <Content Include="Model\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
@@ -638,7 +502,10 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\1579377449_17-43.jpg" />
     <Content Include="Resources\gim17.PNG" />
+    <Content Include="Resources\iconfinder_hammer_tool_103858 %282%29.png" />
+    <Content Include="Resources\search_24 %282%29.png" />
     <None Include="Resources\Снимок.PNG" />
     <None Include="Resources\iconfinder_face-smile_118880.png" />
     <None Include="Resources\iconfinder_reference_1348650.png" />

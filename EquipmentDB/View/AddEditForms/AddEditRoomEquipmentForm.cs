@@ -39,7 +39,7 @@ namespace EquipmentDB.Forms.AddEditForms
             //Проверка наполненности поля: Помещение
             if (comboBoxRoom.SelectedItem == null)
             {
-                MessageBox.Show(@"Не выбрано помещение", "", MessageBoxButtons.OK,
+                MessageBox.Show(@"Не выбран кабинет", "", MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
                 return false;
             }
@@ -55,13 +55,13 @@ namespace EquipmentDB.Forms.AddEditForms
                 _selectedEquipment != null &&
                 _selectedEquipment.Availability+_item.Quantity - (int)numericUpDown1.Value < 0)
             {
-                MessageBox.Show(@"Данное оборудование отсутствует на складе в нужном количестве", "", MessageBoxButtons.OK,
+                MessageBox.Show(@"Данное оборудование отсутствует в кабинете в нужном количестве", "", MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
                 return false;
             }
             if (!_edit&&_selectedEquipment != null && _selectedEquipment.Availability - (int)numericUpDown1.Value < 0)
             {
-                MessageBox.Show(@"Данное оборудование отсутствует на складе в нужном количестве", "", MessageBoxButtons.OK,
+                MessageBox.Show(@"Данное оборудование отсутствует в кабинете в нужном количестве", "", MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
                 return false;
             }
@@ -120,8 +120,39 @@ namespace EquipmentDB.Forms.AddEditForms
             }
         }
 
-    
+        private void comboBoxRoom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var corp = comboBoxRoom.SelectedItem as Room;
+            if (corp != null)
+            {
+                comboBoxRoom.DataSource = _repository.GetEntityes<Room>(room => room.Corps_ID == corp.Corps_ID);
+            }
+        }
 
 
+        private void AddEditRoomEquipmentForm_Load(object sender, EventArgs e)
+        {
+            comboBoxRoom.DataSource = _repository.GetEntityes<Room>();
+            if (_item != null)
+            {
+                buttonAddEdit.Text = "Сохранить";
+                Text = "Редактирование";
+                comboBoxRoom.SelectedItem = _item.Room;
+                _selectedEquipment = _item.Equipment;
+                //-------------------------
+                textBoxEquip.Text = _selectedEquipment.ToString();
+                labelInventory.Text = _selectedEquipment.InventoryNumber;
+                labelAva.Text = _selectedEquipment.Availability.ToString();
+                //-------------------------
+                numericUpDown1.Value = _item.Quantity;
+                buttonAddEdit.Image = Resources.save;
+            }
+            else
+            {
+                buttonAddEdit.Text = "Добавить";
+                Text = "Добавление";
+                buttonAddEdit.Image = Resources.add;
+            }
+        }
     }
 }

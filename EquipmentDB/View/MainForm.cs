@@ -10,6 +10,7 @@ using EquipmentDB.Forms.ReferenceForms;
 using EquipmentDB.Forms.AddEditForms;
 using EquipmentDB.Model;
 using EquipmentDB.Model.Verfication;
+using System.Drawing;
 
 namespace EquipmentDB.Forms
 {
@@ -36,12 +37,7 @@ namespace EquipmentDB.Forms
             new OrganizationsForm().ShowDialog();
             Show();
         }
-        private void должностьToolStripMenuItem_Click(object sender, System.EventArgs e)
-        {
-            Hide();
-            new PostsForm().ShowDialog();
-            Show();
-        }
+
 
         private void типОборудованияToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
@@ -77,54 +73,22 @@ namespace EquipmentDB.Forms
             Show();
         }
 
-        private void временноеИспользованиеToolStripMenuItem_Click(object sender, System.EventArgs e)
-        {
-            Hide();
-            new EquipmentLeasingForm().ShowDialog();
-            UpdateDatagrid();
-            Show();
-        }
 
         private void ответсвенныеСотрудникиToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
             
         }
 
-        private void списанноеОборудованиеToolStripMenuItem_Click(object sender, System.EventArgs e)
-        {
-            Hide();
-            new WriteOffEquipmentsForm().ShowDialog();
-            UpdateDatagrid();
-            Show();
-        }
 
         #endregion
 
-        /// <summary>
-        /// обработка события загрузки главной формы
-        /// </summary>
         private void MainForm_Load(object sender, System.EventArgs e)
         {
-            if (_repository.FirstStart())
-            {
-                Hide();
-                MessageBox.Show(" Первый запуск программы. \n\nНеобходимо добавить пользователя системы в следующем порядке:" +
-                                "\n1. Добавить должность сотрудника" +
-                                "\n2. Добавить сотрудника, который будет привязан к пользователю" +
-                                "\n3. Добавить нового пользователя системы", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                new AddEditPostForm().ShowDialog();
-                new AddEditEmployeeForm().ShowDialog();
-                new AddEditUserForm().ShowDialog();
-                Close();
-            }
-            toolStripStatusLabel1.Text = "   Пользователь: " + _repository.GetCurrentUser()?.Employee;
+          
             InitComboBox();
             UpdateDatagrid();
         }
 
-        /// <summary>
-        /// метод обноваления данных в таблице
-        /// </summary>
         private void UpdateDatagrid()
         {
             dataGridView.DataSource = null;
@@ -157,10 +121,7 @@ namespace EquipmentDB.Forms
             // ------------------------------------------------
         }
 
-        /// <summary>
-        /// Обработка события изменения ввода текста - для текстовых полей поиска
-        /// При вводе более 3 букв пытаемся выдать список автодополнения
-        /// </summary>
+
         private void textBox_TextChanged(object sender, EventArgs e)
         {
             var txBx = sender as TextBox;
@@ -225,31 +186,9 @@ namespace EquipmentDB.Forms
             {
                 return;
             }
-            // списать обрудование
-            if (e.ColumnIndex == dataGridView.Columns["WriteOffColumn"].Index)
-            {
-                var selectedEquipment = dataGridView.SelectedRows[0].DataBoundItem as Equipment;
-                new AddEditWriteOffEquipmentForm(selectedEquipment).ShowDialog();
-                UpdateDatagrid();
-            }
-            // показать оборудование в окне списанного
-            if (e.ColumnIndex == dataGridView.Columns["WriteOffShowColumn"].Index)
-            {
-                Hide();
-                var selectedEquipment = dataGridView.SelectedRows[0].DataBoundItem as Equipment;
-                new WriteOffEquipmentsForm(selectedEquipment).ShowDialog();
-                Show();
-                UpdateDatagrid();
-            }
-            // показать оборудование в окне временного использования оборудования
-            if (e.ColumnIndex == dataGridView.Columns["EquipmentLeasingColumn"].Index)
-            {
-                Hide();
-                var selectedEquipment = dataGridView.SelectedRows[0].DataBoundItem as Equipment;
-                new EquipmentLeasingForm(selectedEquipment).ShowDialog();
-                Show();
-                UpdateDatagrid();
-            }
+
+
+
             // показать оборудование в окне оборудование в помещениях
             if (e.ColumnIndex == dataGridView.Columns["RoomEquipmentColumn"].Index)
             {
@@ -271,10 +210,10 @@ namespace EquipmentDB.Forms
                 var item = dataGridView.SelectedRows[0].DataBoundItem as Equipment;
                 if (!item.CanDelete)
                 {
-                    MessageBox.Show("Удаление невозможно.\nДля удаления оборудования необходимо вернуть его на склад с помещений и временного использования!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Удаление невозможно.\nДля удаления оборудования необходимо вернуть его с кабинета!", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                var result = MessageBox.Show("Удалить оборудование с ID " + item.Equipment_ID + " со склада?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                var result = MessageBox.Show("Удалить оборудование с ID " + item.Equipment_ID + " с гимназии?", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (result != DialogResult.OK) return;
 
                 try
@@ -299,21 +238,8 @@ namespace EquipmentDB.Forms
             Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Hide();
-            new EquipmentLeasingForm().ShowDialog();
-            UpdateDatagrid();
-            Show();
-        }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Hide();
-            new WriteOffEquipmentsForm().ShowDialog();
-            UpdateDatagrid();
-            Show();
-        }
+ 
 
         #endregion
 
@@ -333,13 +259,6 @@ namespace EquipmentDB.Forms
             Show();
         }
 
-        private void ответсвенныеСотрудникиToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            Hide();
-            new EmployeeRoomsForm().ShowDialog();
-            UpdateDatagrid();
-            Show();
-        }
 
      
 
@@ -384,6 +303,42 @@ namespace EquipmentDB.Forms
             Hide();
             new UsersForm().ShowDialog();
             Show();
+        }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void сотрудникиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void оборудованиеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void справочныеДанныеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void справочныеДанныеToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView_RowPrePaint(object sender, DataGridViewRowPrePaintEventArgs e)
+        {
+            var row = dataGridView.Rows[e.RowIndex];
+            var data = row.DataBoundItem as EquipmentLeasing;
+            if (data != null) return;
+          
+            {
+                dataGridView.Rows[e.RowIndex].DefaultCellStyle.ForeColor = Color.Black;
+            }
         }
     }
 }

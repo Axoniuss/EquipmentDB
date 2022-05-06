@@ -101,7 +101,6 @@ namespace EquipmentDB.Forms.AddEditForms
                         Phone = phone,
                         Post_ID = (comboBoxPosts.SelectedItem as Post).Post_ID,
                         Organization_ID = organizationId == 0 ? (int?)null : organizationId,
-                        IsArchive = false
                     };
                     _repository.AddEntity(_item);
                 }

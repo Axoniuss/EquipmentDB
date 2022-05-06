@@ -1,11 +1,11 @@
-﻿using System;
+﻿using EquipmentDB.Controller;
+using EquipmentDB.Forms.AddEditForms;
+using EquipmentDB.Model;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using EquipmentDB.Controller;
-using EquipmentDB.Forms.AddEditForms;
-using EquipmentDB.Model;
 
 namespace EquipmentDB.Forms.MainForms
 {
@@ -14,7 +14,7 @@ namespace EquipmentDB.Forms.MainForms
         private readonly IRepository _repository = Repository.Instance;
 
         /// <summary>
-        /// Коллекция для инициализации combobox, в ключая объект с ID=0 - все корпуса
+        /// Коллекция для инициализации combobox, в ключая объект с ID=0 
         /// </summary>
         private readonly List<Post> _posts;
 
@@ -54,39 +54,9 @@ namespace EquipmentDB.Forms.MainForms
 
             if (e.RowIndex == dataGridView.NewRowIndex || e.RowIndex < 0)
                 return;
-            
-            if (e.ColumnIndex == dataGridView.Columns["ReturnColumn"].Index)
-            {
-                var item = dataGridView.SelectedRows[0].DataBoundItem as Employee;
-                
-                var result = MessageBox.Show($"Вернуть данные сотрудника с ID {item.Employee_ID} с архива?\n" , "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (result != DialogResult.OK) return;
 
-                try
-                {
-                    item.Post = null;
-                    item.Organization = null;
-                    item.EquipmentLeasings = null;
-                    item.EquipmentLeasings1 = null;
-                    item.IsArchive = false;
-                    _repository.UpdateEntity(item);
-                    // _repository.RemoveEntity(item, d => d.Employee_ID == item.Employee_ID);
-                    UpdateDatagrid();
-                }
-                catch (Exception exception)
-                {
-                    _repository.HandleException(exception);
-                }
-            }
-            if (e.ColumnIndex == dataGridView.Columns["EquipmentColumn"].Index)
-            {
-                SelectedEmployee = dataGridView.SelectedRows[0].DataBoundItem as Employee;
-                if (SelectedEmployee.EquipmentCount == 0) return;
 
-                Hide();
-                new EmployeeEquipmentReportForm(SelectedEmployee).ShowDialog();
-                Show();
-            }
+
 
             if (e.ColumnIndex == dataGridView.Columns["EditColumn"].Index)
             {
@@ -97,23 +67,13 @@ namespace EquipmentDB.Forms.MainForms
             if (e.ColumnIndex == dataGridView.Columns["DeleteColumn"].Index)
             {
                 var item = dataGridView.SelectedRows[0].DataBoundItem as Employee;
-                if (item.EquipmentCount > 0)
-                {
-                    MessageBox.Show("Невозможно удалить сотрудника за которым числится выданное оборудование!", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                var result = MessageBox.Show($"Удалить сотрудника с ID {item.Employee_ID}?\nДанная запись будет отмечена как архивная", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                var result = MessageBox.Show($"Удалить сотрудника с ID {item.Employee_ID}?\n", "", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (result != DialogResult.OK) return;
 
                 try
                 {
-                    item.Post = null;
-                    item.Organization = null;
-                    item.EquipmentLeasings = null;
-                    item.EquipmentLeasings1 = null;
-                    item.IsArchive = true;
-                    _repository.UpdateEntity(item);
-                    // _repository.RemoveEntity(item, d => d.Employee_ID == item.Employee_ID);
+                    _repository.RemoveEntity(item, d => d.Employee_ID == item.Employee_ID);
                     UpdateDatagrid();
                 }
                 catch (Exception exception)
@@ -145,7 +105,6 @@ namespace EquipmentDB.Forms.MainForms
                 dataGridView.Columns["DeleteColumn"].Visible = false;
                 dataGridView.Columns["EditColumn"].Visible = false;
                 dataGridView.Columns["EquipmentColumn"].Visible = false;
-                checkBoxArchive.Visible = false;
             }
             InitComboBox();
             UpdateDatagrid();
@@ -160,7 +119,7 @@ namespace EquipmentDB.Forms.MainForms
         private void UpdateDatagrid()
         {
             dataGridView.DataSource = null;
-            dataGridView.DataSource = _repository.GetEntityes<Employee>(emp => emp.IsArchive == checkBoxArchive.Checked);
+            dataGridView.DataSource = _repository.GetEntityes<Employee>(emp => emp.EmployeeFio != null);
             dataGridView.ClearSelection();
         }
 
@@ -226,26 +185,6 @@ namespace EquipmentDB.Forms.MainForms
             UpdateDatagrid();
         }
 
-        /// <summary>
-        /// Обработка события нажатия кнопки импорта сотрудников из файла
-        /// </summary>
-        private async void buttonImportFromFile_Click(object sender, EventArgs e)
-        {
-            var openFileDialog = new OpenFileDialog
-            {
-                Filter = "Excel files (*.xlsx)|*.xlsx"
-            };
-            if (openFileDialog.ShowDialog() != DialogResult.OK) return;
-
-            buttonImportFromFile.Enabled = false;
-            // асинхронная операция импорта данных сотрудников с файла
-            var count = await _repository.ImportEmployeeFromFileAsync(openFileDialog.FileName);
-
-            MessageBox.Show("Импортировано " + count + " сотрудников");
-
-            buttonImportFromFile.Enabled = true;
-            UpdateDatagrid();
-        }
 
         private void dataGridView_DoubleClick(object sender, EventArgs e)
         {
@@ -308,16 +247,6 @@ namespace EquipmentDB.Forms.MainForms
 
         }
 
-        private void checkBoxArchive_CheckedChanged(object sender, EventArgs e)
-        {
-            buttonAdd.Visible = !checkBoxArchive.Checked;
-            buttonImportFromFile.Visible = !checkBoxArchive.Checked;
-            dataGridView.Columns["ArchiveColumn"].Visible = checkBoxArchive.Checked;
-            dataGridView.Columns["EditColumn"].Visible = !checkBoxArchive.Checked;
-            dataGridView.Columns["DeleteColumn"].Visible = !checkBoxArchive.Checked;
-            dataGridView.Columns["ReturnColumn"].Visible = checkBoxArchive.Checked;
-            UpdateDatagrid();
 
-        }
     }
 }

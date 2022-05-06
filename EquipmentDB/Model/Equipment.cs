@@ -25,6 +25,7 @@ namespace EquipmentDB.Model
         public Nullable<int> Manufacturer_ID { get; set; }
         public Nullable<int> EquipmentType_ID { get; set; }
         public string Serial { get; set; }
+        public string EquipmentName { get; set; }
         public int Quantity { get; set; }
         public string InventoryNumber { get; set; }
         public string Notice { get; set; }

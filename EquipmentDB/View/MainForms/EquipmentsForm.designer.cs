@@ -43,7 +43,6 @@ namespace EquipmentDB.Forms.MainForms
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.equipmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewImageColumn5 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn6 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn7 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -57,10 +56,8 @@ namespace EquipmentDB.Forms.MainForms
             this.buttonSearch = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.textBoxSerialNumber = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxEquipType = new System.Windows.Forms.ComboBox();
@@ -70,6 +67,7 @@ namespace EquipmentDB.Forms.MainForms
             this.dataGridViewImageColumn15 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn16 = new System.Windows.Forms.DataGridViewImageColumn();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.equipmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.equipmentIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.equipmentTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.manufacturerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,8 +76,8 @@ namespace EquipmentDB.Forms.MainForms
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.equipmentBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.equipmentBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridViewImageColumn1
@@ -147,14 +145,10 @@ namespace EquipmentDB.Forms.MainForms
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersVisible = false;
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(1121, 395);
+            this.dataGridView.Size = new System.Drawing.Size(702, 395);
             this.dataGridView.TabIndex = 2;
             this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             this.dataGridView.DoubleClick += new System.EventHandler(this.dataGridView_DoubleClick);
-            // 
-            // equipmentBindingSource
-            // 
-            this.equipmentBindingSource.DataSource = typeof(EquipmentDB.Model.Equipment);
             // 
             // dataGridViewImageColumn5
             // 
@@ -220,10 +214,8 @@ namespace EquipmentDB.Forms.MainForms
             this.groupBox1.Controls.Add(this.buttonSearch);
             this.groupBox1.Controls.Add(this.buttonReset);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textBoxSerialNumber);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.comboBoxEquipType);
@@ -241,7 +233,7 @@ namespace EquipmentDB.Forms.MainForms
             this.textBoxInventoryNumber.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.textBoxInventoryNumber.BackColor = System.Drawing.Color.WhiteSmoke;
             this.textBoxInventoryNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxInventoryNumber.Location = new System.Drawing.Point(588, 40);
+            this.textBoxInventoryNumber.Location = new System.Drawing.Point(304, 40);
             this.textBoxInventoryNumber.MaxLength = 100;
             this.textBoxInventoryNumber.Name = "textBoxInventoryNumber";
             this.textBoxInventoryNumber.Size = new System.Drawing.Size(258, 20);
@@ -250,16 +242,16 @@ namespace EquipmentDB.Forms.MainForms
             // 
             // buttonSearch
             // 
-            this.buttonSearch.BackColor = System.Drawing.Color.Gainsboro;
+            this.buttonSearch.BackColor = System.Drawing.Color.OldLace;
             this.buttonSearch.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonSearch.FlatAppearance.BorderSize = 2;
             this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonSearch.Image = global::EquipmentDB.Properties.Resources.search_24;
             this.buttonSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSearch.Location = new System.Drawing.Point(852, 26);
+            this.buttonSearch.Location = new System.Drawing.Point(583, 25);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(263, 49);
+            this.buttonSearch.Size = new System.Drawing.Size(128, 49);
             this.buttonSearch.TabIndex = 3;
             this.buttonSearch.Text = "Найти";
             this.toolTip1.SetToolTip(this.buttonSearch, "Поиск оборудования по заданнм параметрам");
@@ -268,14 +260,14 @@ namespace EquipmentDB.Forms.MainForms
             // 
             // buttonReset
             // 
-            this.buttonReset.BackColor = System.Drawing.Color.Gainsboro;
+            this.buttonReset.BackColor = System.Drawing.Color.OldLace;
             this.buttonReset.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.buttonReset.FlatAppearance.BorderSize = 2;
             this.buttonReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReset.Image = global::EquipmentDB.Properties.Resources.refresh_16;
-            this.buttonReset.Location = new System.Drawing.Point(852, 83);
+            this.buttonReset.Location = new System.Drawing.Point(583, 82);
             this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(263, 29);
+            this.buttonReset.Size = new System.Drawing.Size(128, 29);
             this.buttonReset.TabIndex = 3;
             this.toolTip1.SetToolTip(this.buttonReset, "Сброс параметров и данных поиска");
             this.buttonReset.UseVisualStyleBackColor = false;
@@ -284,21 +276,11 @@ namespace EquipmentDB.Forms.MainForms
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(585, 24);
+            this.label4.Location = new System.Drawing.Point(301, 24);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(111, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "Инвентарный номер";
-            // 
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(588, 65);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(157, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Наименование оборудования";
             // 
             // textBoxSerialNumber
             // 
@@ -322,15 +304,6 @@ namespace EquipmentDB.Forms.MainForms
             this.label2.TabIndex = 9;
             this.label2.Text = "Серийный номер";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(301, 24);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(56, 13);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Тип учёта";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -348,8 +321,6 @@ namespace EquipmentDB.Forms.MainForms
             this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Изготовитель";
-            // 
-            // 
             // 
             // comboBoxEquipType
             // 
@@ -406,6 +377,10 @@ namespace EquipmentDB.Forms.MainForms
             this.dataGridViewImageColumn16.Visible = false;
             this.dataGridViewImageColumn16.Width = 30;
             // 
+            // equipmentBindingSource
+            // 
+            this.equipmentBindingSource.DataSource = typeof(EquipmentDB.Model.Equipment);
+            // 
             // equipmentIDDataGridViewTextBoxColumn
             // 
             this.equipmentIDDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
@@ -438,9 +413,6 @@ namespace EquipmentDB.Forms.MainForms
             this.manufacturerDataGridViewTextBoxColumn.Name = "manufacturerDataGridViewTextBoxColumn";
             this.manufacturerDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 
-
-            // 
             // serialDataGridViewTextBoxColumn
             // 
             this.serialDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
@@ -467,7 +439,7 @@ namespace EquipmentDB.Forms.MainForms
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Availability";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridViewTextBoxColumn2.HeaderText = "На складе";
+            this.dataGridViewTextBoxColumn2.HeaderText = "На базе";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 60;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
@@ -488,7 +460,7 @@ namespace EquipmentDB.Forms.MainForms
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1145, 555);
+            this.ClientSize = new System.Drawing.Size(726, 555);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView);
             this.Name = "EquipmentsForm";
@@ -496,9 +468,9 @@ namespace EquipmentDB.Forms.MainForms
             this.Text = "Выбор оборудования";
             this.Load += new System.EventHandler(this.Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.equipmentBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.equipmentBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -526,12 +498,10 @@ namespace EquipmentDB.Forms.MainForms
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn15;
         private System.Windows.Forms.TextBox textBoxInventoryNumber;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxSerialNumber;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonReset;
         private System.Windows.Forms.Button buttonSearch;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBoxEquipType;
         private System.Windows.Forms.BindingSource equipmentBindingSource;

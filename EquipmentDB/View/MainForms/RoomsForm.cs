@@ -51,11 +51,6 @@ namespace EquipmentDB.Forms.MainForms
 
             if (e.RowIndex == dataGridView.NewRowIndex || e.RowIndex < 0)
                 return;
-            if (e.ColumnIndex == dataGridView.Columns["PassportColumn"].Index)
-            {
-                SelectedRoom = dataGridView.SelectedRows[0].DataBoundItem as Room;
-                new RoomPassportForm(SelectedRoom).ShowDialog();
-            }
             if (e.ColumnIndex == dataGridView.Columns["EditColumn"].Index)
             {
                 var item = dataGridView.SelectedRows[0].DataBoundItem as Room;
@@ -156,7 +151,7 @@ namespace EquipmentDB.Forms.MainForms
 
             _corps.AddRange(_repository.GetEntityes<Corps>());
             comboBoxCorps.DataSource = _corps;
-            comboBoxCorps.SelectedItem = _corps.First();
+
         }
 
         #endregion
